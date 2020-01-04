@@ -75,12 +75,13 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
 
 exports.createPages = async ({ graphql, actions }) => {
     const { createPage, createRedirect } = actions
-    const createFirstPageRedirect = (baseSlug) => createRedirect({
-        fromPath: `${baseSlug}/1`,
-        isPermanent: true,
-        redirectInBrowser: true,
-        toPath: baseSlug,
-    })
+    const createFirstPageRedirect = baseSlug =>
+        createRedirect({
+            fromPath: `${baseSlug}/1`,
+            isPermanent: true,
+            redirectInBrowser: true,
+            toPath: baseSlug,
+        })
 
     const result = await graphql(`
         query {
@@ -153,10 +154,7 @@ exports.createPages = async ({ graphql, actions }) => {
         const baseSlug = `/tags/${_.kebabCase(tag)}`
         Array.from({ length: pagesNeeded }).forEach((undefinedItem, index) => {
             createPage({
-                path:
-                    index === 0
-                        ? baseSlug
-                        : `${baseSlug}/${index + 1}`,
+                path: index === 0 ? baseSlug : `${baseSlug}/${index + 1}`,
                 component: path.resolve(`./src/templates/tag-posts.js`),
                 context: {
                     selfTag: tag,

@@ -53,8 +53,7 @@ const ContactPage = ({ data }) => {
                 </li>
                 <li>
                     See my PGP public key on{" "}
-                    <a href={`https://keybase.io/${authorKeybase}`}>Keybase</a>
-                    {" "}
+                    <a href={`https://keybase.io/${authorKeybase}`}>Keybase</a>{" "}
                 </li>
                 <li>
                     If there's a problem with the site and you're comfortable
