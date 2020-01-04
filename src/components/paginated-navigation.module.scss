@@ -1,0 +1,29 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.center {
+    text-align: center;
+    width: 100px;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+.right {
+    text-align: right;
+    width: 90px;
+}
+
+.left {
+    text-align: left;
+    width: 90px;
+}
+
+.no-margin {
+    h4 {
+        margin: 0;
+    }
+}

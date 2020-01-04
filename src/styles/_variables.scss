@@ -1,0 +1,11 @@
+// In phone layout, force single column
+$phone-maximum: 480px;
+// In tablet layout, include no extra horizontal margin
+$tablet-maximum: 960px;
+
+// For demarcating body area from horizontal margin
+$far-corner: 1rem;
+// For demarcating inner elements from body area
+$middle-corner: 0.7rem;
+// For demarcating inline elements
+$close-corner: 0.4rem;

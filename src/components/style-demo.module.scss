@@ -1,0 +1,29 @@
+@import "../styles/variables";
+
+.style-demo-container {
+    border-radius: $middle-corner;
+    padding: 2.5%;
+    background-color: var(--middle-color);
+    margin: 0 0 1.45rem;
+}
+
+.middle-box {
+    padding: 2.5%;
+    background-color: var(--middle-color);
+    border-radius: $middle-corner;
+}
+
+.close-box {
+    padding: 5%;
+    background-color: var(--close-color);
+    border-radius: $close-corner;
+    margin-bottom: 2.5%;
+
+    span {
+        color: var(--accent-middle-color);
+    }
+
+    span:hover {
+        text-decoration: underline;
+    }
+}

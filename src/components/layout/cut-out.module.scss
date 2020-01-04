@@ -1,0 +1,8 @@
+@import "../../styles/variables";
+
+.cut-out {
+    border-radius: $middle-corner;
+    background-color: var(--middle-color);
+    padding: 2.5%;
+    margin: 0 0 1.45rem;
+}

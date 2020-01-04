@@ -1,0 +1,283 @@
+@import "variables";
+
+/*
+Solarized colors from Ethan Schoonover
+https://ethanschoonover.com/solarized/
+ */
+
+$base03: #002b36;
+$base02: #073642;
+$base01: #586e75;
+$base00: #657b83;
+$base0: #839496;
+$base1: #93a1a1;
+$base2: #eee8d5;
+$base3: #fdf6e3;
+$yellow: #b58900;
+$orange: #cb4b16;
+$red: #dc322f;
+$magenta: #d33682;
+$violet: #6c71c4;
+$blue: #268bd2;
+$cyan: #2aa198;
+$green: #859900;
+
+/*
+For whatever reason, we can't use SCSS replacement in these variables
+because the replacement doesn't actually happen.
+ */
+
+:root {
+    --code-background: #fdf6e3; // base3
+    --code-background-highlights: #eee8d5; // base2
+    --code-comments: #93a1a1; // base1
+    --code-body: #657b83; // base00
+    --code-emphasis: #586e75; // base01
+}
+
+[data-theme="dark"] {
+    --code-background: #002b36; // base03
+    --code-background-highlights: #073642; // base02
+    --code-comments: #586e75; // base01
+    --code-body: #839496; // base0
+    --code-emphasis: #93a1a1; // base1
+}
+
+// Basic style
+// Drawn from https://github.com/PrismJS/prism/blob/master/themes/prism-solarizedlight.css
+
+code[class*="language-"],
+pre[class*="language-"] {
+    color: var(--code-body);
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    word-wrap: normal;
+    padding: 0;
+    line-height: 1.5;
+    -moz-tab-size: 4;
+    -o-tab-size: 4;
+    tab-size: 4;
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+    padding: 1rem;
+    margin: 0.5rem 0;
+    overflow: auto;
+    border-radius: $middle-corner;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+    background-color: var(--code-background);
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+    padding: 0.05rem 0.2rem;
+    border-radius: $close-corner;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+    color: var(--code-comments);
+}
+
+.token.punctuation {
+    color: var(--code-emphasis);
+}
+
+.namespace {
+    opacity: 0.7;
+}
+
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol,
+.token.deleted {
+    color: $blue;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.url,
+.token.inserted {
+    color: $cyan;
+}
+
+.token.entity {
+    color: var(--code-body);
+    background: var(--code-background-highlights);
+    cursor: help;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+    color: $green;
+}
+
+.token.function {
+    color: $yellow;
+}
+
+.token.regex,
+.token.important,
+.token.variable {
+    color: $orange;
+}
+
+.token.important,
+.token.bold {
+    font-weight: 400;
+}
+
+.token.italic {
+    font-style: italic;
+}
+
+// Line numbers
+// Drawn from https://github.com/PrismJS/prism/blob/master/plugins/line-numbers/prism-line-numbers.css
+
+pre[class*="language-"].line-numbers {
+    position: relative;
+    padding-left: 3.8rem;
+    counter-reset: linenumber;
+}
+
+pre[class*="language-"].line-numbers > code {
+    position: relative;
+    white-space: inherit;
+}
+
+.line-numbers .line-numbers-rows {
+    position: absolute;
+    pointer-events: none;
+    top: 0;
+    font-size: 100%;
+    left: -3.8rem;
+    letter-spacing: 0;
+    border-right: 1px solid var(--code-comments);
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    visibility: hidden;
+
+    @media (min-width: $phone-maximum) {
+        visibility: visible;
+    }
+}
+
+.line-numbers-rows > span {
+    pointer-events: none;
+    display: block;
+    counter-increment: linenumber;
+    width: 2.3rem;
+}
+
+.line-numbers-rows > span::before {
+    content: counter(linenumber);
+    color: var(--code-comments);
+    display: block;
+    padding-right: 0.8rem;
+    text-align: right;
+}
+
+// Line highlighting
+// Drawn from https://www.gatsbyjs.org/packages/gatsby-remark-prismjs/?=#optional-add-line-highlighting-styles
+
+.gatsby-highlight-code-line {
+    background-color: var(--code-background-highlights);
+    display: block;
+    margin-right: -1rem;
+    margin-left: -0.7rem;
+    padding-right: 1rem;
+    padding-left: 0.45rem;
+    border-left: 0.25rem solid var(--accent-middle-color);
+}
+
+/**
+ * Add back the container background-color, border-radius, padding, margin
+ * and overflow that we removed from <pre>.
+ */
+.gatsby-highlight {
+    background-color: var(--code-background);
+    border-radius: $middle-corner;
+    margin: 0.5rem 0;
+    padding: 1rem;
+    overflow: auto;
+}
+
+/**
+ * remove the default PrismJS theme background-color, border-radius, margin,
+ * padding and overflow.
+ * 1. Make the element just wide enough to fit its content.
+ * 2. Always fill the visible space in .gatsby-highlight.
+ * 3. Adjust the position of the line numbers
+ */
+.gatsby-highlight pre[class*="language-"] {
+    background-color: transparent;
+    margin: 0;
+    padding: 0;
+    overflow: initial;
+    float: left; /* 1 */
+    min-width: 100%; /* 2 */
+}
+
+.gatsby-highlight pre[class*="language-"].line-numbers {
+    overflow: initial;
+
+    @media (min-width: $phone-maximum) {
+        padding: 0 0 0 2.8rem;
+    }
+}
+
+// Command prompt
+// Drawn from https://github.com/PrismJS/prism/blob/master/plugins/command-line/prism-command-line.css
+
+.command-line-prompt {
+    display: block;
+    float: left;
+    font-size: 100%;
+    letter-spacing: -1px;
+    margin-right: 0.5rem;
+    pointer-events: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.command-line-prompt > span::before {
+    color: var(--code-comments);
+    content: " ";
+    display: block;
+    padding-right: 0.8rem;
+}
+
+.command-line-prompt > span[data-user]::before {
+    content: "[" attr(data-user) "@" attr(data-host) "] $";
+}
+
+.command-line-prompt > span[data-user="root"]::before {
+    content: "[" attr(data-user) "@" attr(data-host) "] #";
+}
+
+.command-line-prompt > span[data-prompt]::before {
+    content: attr(data-prompt);
+}

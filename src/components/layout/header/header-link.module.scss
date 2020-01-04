@@ -1,0 +1,13 @@
+@import "../../../styles/variables";
+
+.header-link {
+    display: inline-block;
+    font-weight: 400;
+    font-style: normal;
+    margin: 0 2.5rem;
+    vertical-align: center;
+
+    @media (min-width: $phone-maximum) {
+        margin: 0 0 0 20px;
+    }
+}

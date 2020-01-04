@@ -1,0 +1,43 @@
+@import "../styles/variables";
+
+.container {
+    @media (min-width: $phone-maximum) {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+    }
+}
+
+.leader {
+    margin-bottom: 1.45rem;
+
+    @media (min-width: $phone-maximum) {
+        margin-bottom: 5%;
+        text-align: left;
+        align-self: center;
+
+        h3:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    @media (min-width: $tablet-maximum) {
+        h3 {
+            font-size: 1.62671rem;
+        }
+    }
+}
+
+.profile {
+    margin-bottom: 5%;
+
+    @media (min-width: $phone-maximum) {
+        width: 300px;
+        flex-shrink: 0.5;
+        margin-left: 5%;
+    }
+}
+
+.no-margin {
+    margin: 0;
+}

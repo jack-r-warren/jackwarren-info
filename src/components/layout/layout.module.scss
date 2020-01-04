@@ -1,0 +1,22 @@
+@import "../../styles/variables";
+
+.main-box {
+    background-color: var(--close-color);
+    padding: 5%;
+
+    @media (min-width: $tablet-maximum) {
+        border-radius: $far-corner;
+    }
+}
+
+.footer {
+    text-align: center;
+    margin: 2.5%;
+    line-height: 40px;
+
+    @media (min-width: $tablet-maximum) {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-evenly;
+    }
+}

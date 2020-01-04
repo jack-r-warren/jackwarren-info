@@ -1,0 +1,24 @@
+@import "../styles/variables";
+
+.container {
+    @media (min-width: $phone-maximum) {
+        display: flex;
+    }
+}
+
+.left {
+    margin-bottom: 1.45rem;
+
+    @media (min-width: $phone-maximum) {
+        margin-bottom: 0;
+    }
+}
+
+.right {
+    @media (min-width: $phone-maximum) {
+        margin-left: 5%;
+        width: 15%;
+        min-width: fit-content;
+        flex-shrink: 0;
+    }
+}

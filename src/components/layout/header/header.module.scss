@@ -1,0 +1,54 @@
+@import "../../../styles/variables";
+
+.header-bar {
+    margin: 1.5% 3.5%;
+
+    @media (min-width: $tablet-maximum) {
+        margin: 1.5% 2.5%;
+    }
+
+    @media (min-width: $phone-maximum) {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    a {
+        color: var(--header-text-color);
+        text-decoration: none;
+    }
+
+    a:hover,
+    a:active {
+        color: var(--body-text-color);
+        text-decoration: none;
+    }
+}
+
+.site-title {
+    text-align: center;
+    display: flex;
+
+    h1 {
+        margin: auto;
+
+        @media (min-width: $phone-maximum) {
+            margin-bottom: 10px;
+        }
+    }
+
+    @media (min-width: $phone-maximum) {
+        text-align: left;
+    }
+}
+
+.header-links {
+    margin: 2.5% 0;
+    text-align: center;
+
+    @media (min-width: $phone-maximum) {
+        margin: 0;
+        line-height: 48px;
+        text-align: right;
+        max-width: 50%;
+    }
+}

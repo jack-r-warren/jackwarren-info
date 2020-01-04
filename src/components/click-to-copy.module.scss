@@ -1,0 +1,15 @@
+.copy-button {
+    background: none !important;
+    border: none;
+    padding: 0 !important;
+    cursor: pointer;
+    color: var(--accent-middle-color);
+    -webkit-text-decoration-skip: objects;
+    text-decoration: none;
+}
+
+.copy-button:hover,
+.copy-button:active {
+    outline-width: 0;
+    text-decoration: underline;
+}
