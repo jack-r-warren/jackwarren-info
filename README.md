@@ -85,6 +85,6 @@ Several run configurations have been defined for common actions:
 
 [Prettier](https://prettier.io/) is used for code formatting, and is called by the `format` npm task.
 
-[Husky](https://www.npmjs.com/package/husky) is used to run the `format` npm task before all commits.
+[Husky](https://www.npmjs.com/package/husky) is used to run the `pretty-quick` before all commits.
 
 [Stylelint](https://stylelint.io/) is used for additional SCSS linting.
