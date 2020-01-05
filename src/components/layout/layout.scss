@@ -444,6 +444,9 @@ noscript {
 iframe {
     padding: 0;
     margin: 0 0 1.45rem;
+    border-style: solid;
+    border-color: var(--far-color);
+    border-radius: $middle-corner;
 }
 
 hr {

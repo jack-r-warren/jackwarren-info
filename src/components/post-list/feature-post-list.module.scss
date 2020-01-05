@@ -2,12 +2,17 @@
 
 .feature-posts-container {
     margin-bottom: 1rem;
+
     @media (min-width: $phone-maximum) {
         display: flex;
     }
 }
 
 .post-item {
+    // 0<unit> is needed for IE11, https://github.com/philipwalton/flexbugs#flexbug-4
+    //noinspection Stylelint,CssRedundantUnit
+    flex: 1 1 0%;
+
     @media (min-width: $phone-maximum) {
         margin-right: 5%;
 
