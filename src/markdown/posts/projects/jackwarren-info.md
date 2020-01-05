@@ -2,9 +2,10 @@
 title: Personal Website
 date: 2020-01-01
 tags:
-    - HTML/CSS
+    - CSS
     - JavaScript
     - React
+    - Gatsby
 featured: true
 ---
 
