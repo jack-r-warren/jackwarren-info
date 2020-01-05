@@ -93,4 +93,4 @@ I'm a bit of a perfectionist, and there's a lot of work I've done on this site t
 -   Inline click-to-copy functionality from the contact page is nice and portable: <click-to-copy copy="jack@jackwarren.info">try me!</click-to-copy>
 -   Markdown parsing is augmented to render custom components (this entire page is just a Markdown file)
 -   [gatsby-plugin-manifest](https://www.gatsbyjs.org/packages/gatsby-plugin-manifest) and [gatsby-plugin-offline](https://www.gatsbyjs.org/packages/gatsby-plugin-offline) make this site work offline as a Progressive Web App
--   There's a significant amount of linting and workflow support in this site's codebase: beyond what Gatsby already packages in, [Prettier](https://prettier.io/), [Husky](https://github.com/typicode/husky), [stylelint](https://stylelint.io/), and a reflected GraphQL schema are all in use.
+-   There's a significant amount of linting and workflow support in this site's codebase: beyond what Gatsby already packages in, [Prettier](https://prettier.io/), [Husky](https://github.com/typicode/husky), [stylelint](https://stylelint.io/), and a reflected GraphQL schema are all in use
