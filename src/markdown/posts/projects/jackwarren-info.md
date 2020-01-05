@@ -75,7 +75,13 @@ Thanks here go to [Prism](https://prismjs.com/) and Gatsby's [plugin and resourc
 
 ### Deployment
 
-Well, this hasn't been deployed yet, so there isn't much to put here, is there?
+<a href="https://app.netlify.com/sites/jackwarren-info/deploys">
+    <img src="https://api.netlify.com/api/v1/badges/d5c1c4a8-c3aa-4940-8cb9-c8511672e545/deploy-status" alt="Netlify Status Indicator" style="border-radius: unset; margin: 0;">
+</a>
+
+This site is deployed to [Netlify](https://www.netlify.com/), with their GitHub integration providing a continuous deployment pipeline.
+
+Security headers and redirects are made courtesy of [gatsby-plugin-netlify](https://www.gatsbyjs.org/packages/gatsby-plugin-netlify/).
 
 ### Addendum: Details
 
