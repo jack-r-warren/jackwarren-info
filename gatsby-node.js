@@ -184,4 +184,21 @@ exports.createPages = async ({ graphql, actions }) => {
             },
         })
     })
+
+    // Permanent redirects from my old site
+    _.forIn(
+        {
+            // old : new
+            "/blog/racket-command-line":
+                "/posts/guides/racket/racket-command-line/",
+            "/blog/racket-system-access":
+                "/posts/guides/racket/racket-system-access/",
+        },
+        (newPath, oldPath) =>
+            createRedirect({
+                fromPath: oldPath,
+                isPermanent: true,
+                toPath: newPath,
+            })
+    )
 }
