@@ -5,7 +5,7 @@ dependency:
 config:
     - /gatsby-*.js
     - /.*
-    - /**/*.{json,yml}
+    - /**/*.{json,yml,toml}
     - schema.graphql
 
 documentation:
