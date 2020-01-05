@@ -1,5 +1,6 @@
 # [jackwarren.info](https://jackwarren.info)
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/d5c1c4a8-c3aa-4940-8cb9-c8511672e545/deploy-status)](https://app.netlify.com/sites/jackwarren-info/deploys)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
 
 This is the codebase behind my personal website.
