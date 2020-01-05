@@ -6,7 +6,7 @@ import _ from "lodash"
 const TagList = ({ countMap, className }) => {
     return (
         <div className={className}>
-            <h3>Tags</h3>
+            <h3>Related Tags</h3>
             {_.toPairs(countMap)
                 .sort((a, b) => b[1] - a[1])
                 .reduce((soFar, pair) => {
