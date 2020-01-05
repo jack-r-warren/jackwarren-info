@@ -430,8 +430,10 @@ fieldset {
 }
 
 blockquote {
-    padding: 0;
-    margin: 0 1.45rem 1.45rem;
+    padding: 0 1.45rem;
+    margin: 0 0 1.45rem 0;
+    border-left: 2px solid;
+    border-color: var(--far-color);
 }
 
 noscript {
