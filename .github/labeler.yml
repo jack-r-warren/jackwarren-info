@@ -1,0 +1,20 @@
+dependency:
+    - /package.json
+    - /package-lock.json
+
+config:
+    - /gatsby-*.js
+    - /.*
+    - /**/*.{json,yml}
+    - schema.graphql
+
+documentation:
+    - /README.md
+    - /LICENSE
+    - /.github/**/*.md
+
+codebase:
+    - /**/*.{js,scss}
+
+pages:
+    - /src/{markdown,pages,templates}/**/*
