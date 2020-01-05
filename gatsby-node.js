@@ -194,6 +194,7 @@ exports.createPages = async ({ graphql, actions }) => {
             "/blog/racket-system-access":
                 "/posts/guides/racket/racket-system-access/",
             "/blog/racket-piazza": "/posts/projects/racket-piazza/",
+            "/blog/simple-antivirus": "/posts/projects/racket-antivirus/",
         },
         (newPath, oldPath) =>
             createRedirect({
