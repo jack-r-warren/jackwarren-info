@@ -11,7 +11,6 @@ import PaginatedNavigation from "../components/paginated-navigation"
 import categoryPostsStyles from "./category-posts.module.scss"
 
 export default ({ data, pageContext }) => {
-    console.log(pageContext.parentCategories)
     const parents = [
         ...(pageContext.parentCategories.length !== 0
             ? [
