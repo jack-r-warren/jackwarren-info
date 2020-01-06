@@ -5,7 +5,7 @@
 
 This is the codebase behind my personal website.
 
-The site is built with React, using Gatsby for static generation, SCSS for styling, and Remark for Markdown processing.
+The site is built with React, using Gatsby for static generation, Sass for styling, and Remark for Markdown processing.
 
 The site is fully copyrighted by Jack Warren; more information is available in the LICENSE file.
 
