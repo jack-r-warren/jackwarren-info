@@ -18,18 +18,13 @@ module.exports = {
         `gatsby-plugin-sharp`,
         `gatsby-transformer-sharp`,
         `gatsby-plugin-netlify`,
-        "gatsby-plugin-netlify-cache",
+        `gatsby-plugin-netlify-cache`,
         {
             resolve: `gatsby-transformer-remark`,
             options: {
                 excerpt_separator: `<!-- endexcerpt -->`,
                 plugins: [
-                    {
-                        resolve: `gatsby-remark-autolink-headers`,
-                        options: {
-                            isIconAfterHeader: false,
-                        },
-                    },
+                    `gatsby-remark-autolink-headers`,
                     {
                         resolve: `gatsby-remark-table-of-contents`,
                         options: {
