@@ -25,6 +25,15 @@ module.exports = {
                 excerpt_separator: `<!-- endexcerpt -->`,
                 plugins: [
                     `gatsby-remark-autolink-headers`,
+                    `gatsby-remark-responsive-iframe`,
+                    {
+                        resolve: `gatsby-remark-copy-linked-files`,
+                        options: {
+                            ignoreFileExtensions: [`png`, `jpg`, `jpeg`],
+                            destinationDir: f =>
+                                `downloads/${f.hash}/${f.name}`,
+                        },
+                    },
                     {
                         resolve: `gatsby-remark-table-of-contents`,
                         options: {
