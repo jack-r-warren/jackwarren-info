@@ -25,6 +25,21 @@ module.exports = {
                 excerpt_separator: `<!-- endexcerpt -->`,
                 plugins: [
                     {
+                        resolve: `gatsby-remark-autolink-headers`,
+                        options: {
+                            isIconAfterHeader: false,
+                        },
+                    },
+                    {
+                        resolve: `gatsby-remark-table-of-contents`,
+                        options: {
+                            exclude: "((?:Table of )?Contents|In this post)",
+                            tight: false,
+                            fromHeading: 1,
+                            toHeading: 6,
+                        },
+                    },
+                    {
                         resolve: `gatsby-remark-prismjs`,
                         options: {
                             inlineCodeMarker: "›",

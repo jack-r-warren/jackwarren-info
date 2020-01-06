@@ -11,6 +11,12 @@ This guide provides an introduction to interacting directly with the system from
 
 This guide assumes you have a basic understanding of making Racket command line programs and assumes a Linux system (WSL is fine, I don't use Mac but it likely is as well)
 
+### Contents
+
+```toc
+
+```
+
 ## Arbitrary Command Line Parameters
 
 In my previous guide I discussed Racket's command-line function as it pertains to flags, but what about the case of providing an arbitrary number of parameters without flags? Luckily, command-line gives us a very quick way to simply get all parameters as a list:

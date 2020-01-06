@@ -254,6 +254,15 @@ figcaption {
     a {
         color: var(--accent-middle-color);
     }
+
+    a.anchor.before {
+        width: 5%;
+        text-align: center;
+
+        @media (max-width: $phone-maximum) {
+            visibility: hidden;
+        }
+    }
 }
 
 h1 {
