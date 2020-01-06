@@ -5,9 +5,9 @@ import React from "react"
 import headerLinkStyles from "./header-link.module.scss"
 
 const HeaderLink = ({ title, link }) => (
-    <h4 className={headerLinkStyles.headerLink}>
+    <h3 className={headerLinkStyles.headerLink}>
         <Link to={link}>{title}</Link>
-    </h4>
+    </h3>
 )
 
 HeaderLink.propTypes = {

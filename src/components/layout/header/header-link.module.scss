@@ -2,10 +2,7 @@
 
 .header-link {
     display: inline-block;
-    font-weight: 400;
-    font-style: normal;
     margin: 0 1rem;
-    vertical-align: center;
 
     @media (min-width: $phone-maximum) {
         margin: 0 0 0 2rem;
