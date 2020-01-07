@@ -50,19 +50,22 @@ export default ({ data, pageContext }) => {
             <FeaturedPostList postNodes={data.featuredPosts.nodes} />
         </>
     )
+    const description =
+        data.categoryDescription.nodes.length > 0
+            ? data.categoryDescription.nodes[0].description
+            : null
 
     return (
         <Layout>
-            <Metadata title={`All ${categoryName}`} />
+            <Metadata title={`All ${categoryName}`} description={description} />
             <div>
                 {parents.length > 0 && <h4>{parents}</h4>}
                 <h1>{categoryName}</h1>
                 {children.length > 0 && <h4>{children}</h4>}
-                {data.categoryDescription.nodes.length > 0 && (
+                {description && (
                     <p
                         dangerouslySetInnerHTML={{
-                            __html:
-                                data.categoryDescription.nodes[0].description,
+                            __html: description,
                         }}
                     />
                 )}

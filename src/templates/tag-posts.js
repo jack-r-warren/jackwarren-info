@@ -1,5 +1,5 @@
 import React from "react"
-import { graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
 import Layout from "../components/layout/layout"
 import Metadata from "../components/metadata"
 import PostList from "../components/post-list/post-list"
@@ -9,9 +9,12 @@ export default ({ data, pageContext }) => {
     const tag = pageContext.selfTag
     return (
         <Layout>
-            <Metadata title={`${tag} posts`} />
+            <Metadata title={`${tag} Posts`} />
             <div>
-                <h1>{`${tag}-tagged posts`}</h1>
+                <h4>
+                    <Link to={"/tags"}>Tags</Link> /
+                </h4>
+                <h1>{`${tag} Posts`}</h1>
                 <PaginatedNavigation
                     selfPage={pageContext.selfPage}
                     totalPages={pageContext.totalPages}

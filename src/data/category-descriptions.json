@@ -1,7 +1,7 @@
 [
     {
         "category": "/posts",
-        "description": "Almost everything I've written on my site, all in one place. The subcategories above might help if you're looking for something specific."
+        "description": "Almost everything I've written on my site, all in one place. The subcategories above might help if you're looking for something specific, or you can look at <a href=\"/tags\">all tags</a>."
     },
     {
         "category": "/posts/guides/racket",
