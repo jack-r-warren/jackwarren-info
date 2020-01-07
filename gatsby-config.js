@@ -16,9 +16,10 @@ module.exports = {
         `gatsby-plugin-react-helmet`,
         `gatsby-plugin-sass`,
         `gatsby-plugin-sharp`,
-        `gatsby-transformer-sharp`,
         `gatsby-plugin-netlify`,
         `gatsby-plugin-netlify-cache`,
+        `gatsby-transformer-sharp`,
+        `gatsby-transformer-json`,
         {
             resolve: `gatsby-transformer-remark`,
             options: {
@@ -80,6 +81,13 @@ module.exports = {
             options: {
                 name: `markdown`,
                 path: `${__dirname}/src/markdown`,
+            },
+        },
+        {
+            resolve: `gatsby-source-filesystem`,
+            options: {
+                name: `data`,
+                path: `${__dirname}/src/data`,
             },
         },
         {

@@ -56,8 +56,16 @@ export default ({ data, pageContext }) => {
             <Metadata title={`All ${categoryName}`} />
             <div>
                 {parents.length > 0 && <h4>{parents}</h4>}
-                <h1>{featureExist ? categoryName : `All ${categoryName}`}</h1>
+                <h1>{categoryName}</h1>
                 {children.length > 0 && <h4>{children}</h4>}
+                {data.categoryDescription.nodes.length > 0 && (
+                    <p
+                        dangerouslySetInnerHTML={{
+                            __html:
+                                data.categoryDescription.nodes[0].description,
+                        }}
+                    />
+                )}
                 {shouldFeature && featuredComponents}
                 <div className={categoryPostsStyles.container}>
                     <div className={categoryPostsStyles.left}>
@@ -138,6 +146,14 @@ export const query = graphql`
                         }
                     }
                 }
+            }
+        }
+        categoryDescription: allCategoryDescriptionsJson(
+            filter: { category: { eq: $selfCategory } }
+            limit: 1
+        ) {
+            nodes {
+                description
             }
         }
     }
