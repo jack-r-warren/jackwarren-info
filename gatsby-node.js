@@ -188,19 +188,24 @@ exports.createPages = async ({ graphql, actions }) => {
     // Permanent redirects from my old site
     _.forIn(
         {
-            // old : new
-            "/blog/racket-command-line":
-                "/posts/guides/racket/racket-command-line/",
-            "/blog/racket-system-access":
-                "/posts/guides/racket/racket-system-access/",
-            "/blog/racket-piazza": "/posts/projects/racket-piazza/",
-            "/blog/simple-antivirus": "/posts/projects/racket-antivirus/",
+            // new : (old | [old])
+            "/posts/guides/racket/racket-command-line/":
+                "/blog/racket-command-line/",
+            "/posts/guides/racket/racket-system-access/":
+                "/blog/racket-system-access/",
+            "/posts/projects/racket-piazza/": "/blog/racket-piazza/",
+            "/posts/projects/racket-antivirus/": "/blog/simple-antivirus/",
         },
-        (newPath, oldPath) =>
-            createRedirect({
-                fromPath: oldPath,
-                isPermanent: true,
-                toPath: newPath,
-            })
+        (oldPaths, newPath) =>
+            _.forEach(
+                Array.isArray(oldPaths) ? oldPaths : [oldPaths],
+                oldPath => {
+                    createRedirect({
+                        fromPath: oldPath,
+                        isPermanent: true,
+                        toPath: newPath,
+                    })
+                }
+            )
     )
 }
