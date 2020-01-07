@@ -4,25 +4,26 @@ import { Link } from "gatsby"
 import _ from "lodash"
 
 const TagList = ({ countMap, showTitle, className }) => {
-    return (
+    const tagLinks = _.toPairs(countMap)
+        .sort((a, b) => b[1] - a[1])
+        .reduce((soFar, pair) => {
+            const tag = pair[0]
+            const count = pair[1]
+            soFar.push(
+                <Link
+                    key={tag}
+                    to={`/tags/${_.kebabCase(tag)}`}
+                >{`${tag} (${count})`}</Link>
+            )
+            soFar.push(<br />)
+            return soFar
+        }, [])
+    return tagLinks.length > 0 ? (
         <div className={className}>
             {showTitle && <h3>Related Tags</h3>}
-            {_.toPairs(countMap)
-                .sort((a, b) => b[1] - a[1])
-                .reduce((soFar, pair) => {
-                    const tag = pair[0]
-                    const count = pair[1]
-                    soFar.push(
-                        <Link
-                            key={tag}
-                            to={`/tags/${_.kebabCase(tag)}`}
-                        >{`${tag} (${count})`}</Link>
-                    )
-                    soFar.push(<br />)
-                    return soFar
-                }, [])}
+            {tagLinks}
         </div>
-    )
+    ) : null
 }
 
 TagList.propTypes = {

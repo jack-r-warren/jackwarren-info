@@ -15,7 +15,7 @@ import ClickToCopy from "../components/click-to-copy"
 export default ({ data }) => {
     const post = data.markdownRemark
     const info = [
-        ...(post.fields.categories !== []
+        ...(post.fields.categories.length > 0
             ? [
                   [
                       "In ",
@@ -32,7 +32,7 @@ export default ({ data }) => {
         ...(post.fields.date !== null
             ? [<span key={post.fields.date}>{post.fields.date}</span>]
             : []),
-        ...(post.fields.tags !== []
+        ...(post.fields.tags.length > 0
             ? [
                   post.fields.tags
                       .map(tag => (
