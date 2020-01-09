@@ -19,8 +19,13 @@ function Metadata({ description, title }) {
                     }
                 }
                 allFile(
-                    filter: { relativePath: { eq: "favicon.svg" } }
                     limit: 1
+                    filter: {
+                        name: { eq: "favicon" }
+                        ext: { eq: ".svg" }
+                        sourceInstanceName: { eq: "images" }
+                        relativeDirectory: { eq: "" }
+                    }
                 ) {
                     nodes {
                         publicURL
@@ -53,7 +58,7 @@ function Metadata({ description, title }) {
                 // inline it, which webpack would do for us if we imported it
                 // directly
                 // Querying publicURL on a file node causes it to be copied
-                href={allFile.nodes.pop().publicURL}
+                href={allFile.nodes[0].publicURL}
                 type="image/svg+xml"
                 sizes="any"
             />
