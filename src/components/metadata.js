@@ -49,6 +49,10 @@ function Metadata({ description, title }) {
             />
             <link
                 rel="icon"
+                // We get a url for this via graphql because we don't want to
+                // inline it, which webpack would do for us if we imported it
+                // directly
+                // Querying publicURL on a file node causes it to be copied
                 href={allFile.nodes.pop().publicURL}
                 type="image/svg+xml"
                 sizes="any"
