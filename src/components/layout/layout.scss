@@ -10,13 +10,15 @@
     --accent-middle-color: #0288d1;
 }
 
-[data-theme="dark"] {
-    --far-color: #000a12;
-    --middle-color: #263238;
-    --close-color: #4f5b62;
-    --header-text-color: #fff;
-    --body-text-color: hsla(0, 100%, 100%, 0.8);
-    --accent-middle-color: #4fc3f7;
+@media not print {
+    [data-theme="dark"] {
+        --far-color: #000a12;
+        --middle-color: #263238;
+        --close-color: #4f5b62;
+        --header-text-color: #fff;
+        --body-text-color: hsla(0, 100%, 100%, 0.8);
+        --accent-middle-color: #4fc3f7;
+    }
 }
 
 html {
@@ -258,6 +260,7 @@ figcaption {
     a.anchor.before {
         width: 5%;
         text-align: center;
+        fill: var(--body-text-color);
 
         @media (max-width: $phone-maximum) {
             visibility: hidden;

@@ -35,12 +35,14 @@ because the replacement doesn't actually happen.
     --code-emphasis: #586e75; // base01
 }
 
-[data-theme="dark"] {
-    --code-background: #002b36; // base03
-    --code-background-highlights: #073642; // base02
-    --code-comments: #586e75; // base01
-    --code-body: #839496; // base0
-    --code-emphasis: #93a1a1; // base1
+@media not print {
+    [data-theme="dark"] {
+        --code-background: #002b36; // base03
+        --code-background-highlights: #073642; // base02
+        --code-comments: #586e75; // base01
+        --code-body: #839496; // base0
+        --code-emphasis: #93a1a1; // base1
+    }
 }
 
 // Basic style
