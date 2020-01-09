@@ -2,7 +2,11 @@ require(`dotenv`).config()
 
 module.exports = {
     siteMetadata: {
-        siteUrl: process.env.SITE_URL || `https://jackwarren.info`,
+        siteUrl:
+            (process.env.CONTEXT === "production" ||
+            process.env.CONTEXT === "development"
+                ? process.env.URL
+                : process.env.DEPLOY_PRIME_URL) || "https://jackwarren.info",
         title: `Jack Warren`,
         description: `Blog posts, tutorials, and projects from a cybersecurity undergrad at Northeastern University`,
         author: `Jack Warren`,
@@ -18,6 +22,7 @@ module.exports = {
         `gatsby-plugin-sharp`,
         `gatsby-plugin-netlify`,
         `gatsby-plugin-netlify-cache`,
+        `gatsby-plugin-catch-links`,
         `gatsby-transformer-sharp`,
         `gatsby-transformer-json`,
         {
@@ -105,6 +110,93 @@ module.exports = {
                 },
             },
         },
+        {
+            resolve: `gatsby-plugin-robots-txt`,
+            options: {
+                resolveEnv: () => process.env.CONTEXT || "development",
+                env: {
+                    production: {
+                        policy: [{ userAgent: "*" }],
+                    },
+                    development: {
+                        policy: [{ userAgent: "*", disallow: ["/"] }],
+                        sitemap: null,
+                        host: null,
+                    },
+                    "branch-deploy": {
+                        policy: [{ userAgent: "*", disallow: ["/"] }],
+                        sitemap: null,
+                        host: null,
+                    },
+                    "deploy-preview": {
+                        policy: [{ userAgent: "*", disallow: ["/"] }],
+                        sitemap: null,
+                        host: null,
+                    },
+                },
+            },
+        },
+        {
+            resolve: `gatsby-plugin-feed`,
+            options: {
+                query: `
+                  {
+                    site {
+                      siteMetadata {
+                        title
+                        description
+                        siteUrl
+                      }
+                    }
+                  }
+                `,
+                feeds: [
+                    {
+                        serialize: ({ query: { site, allMarkdownRemark } }) => {
+                            return allMarkdownRemark.edges.map(edge => {
+                                return Object.assign({}, edge.node.fields, {
+                                    description: edge.node.excerpt,
+                                    url:
+                                        site.siteMetadata.siteUrl +
+                                        edge.node.fields.slug,
+                                    guid:
+                                        site.siteMetadata.siteUrl +
+                                        edge.node.fields.slug,
+                                    // RSS categories are just a list of strings
+                                    categories: edge.node.fields.categories
+                                        .map(cat => cat.split("/").pop())
+                                        .filter(cat => cat !== ""),
+                                })
+                            })
+                        },
+                        query: `
+                          {
+                            allMarkdownRemark(
+                              filter: {fields: {categories: {in: ["/posts"]}, date: {ne: null}}} 
+                              sort: {order: DESC, fields: fields___date}) 
+                            {
+                              edges {
+                                node {
+                                  excerpt
+                                  fields {
+                                    title
+                                    date
+                                    slug
+                                    categories
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        `,
+                        output: "/rss.xml",
+                        title: "jackwarren.info RSS",
+                        match: "^/posts/",
+                    },
+                ],
+            },
+        },
+        `gatsby-plugin-sitemap`,
         `gatsby-plugin-offline`,
     ],
 }

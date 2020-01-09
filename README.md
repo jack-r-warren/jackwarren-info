@@ -13,8 +13,16 @@ The site is fully copyrighted by Jack Warren; more information is available in t
 
 ### Environment Variables
 
--   `SITE_URL` - The base URL of the website, with the leading protocol and without the trailing slash
+-   `URL` - The base URL of the website, with the leading protocol and without the trailing slash
+    -   Set automatically by Netlify during deployment
     -   Defaults to `https://jackwarren.info`
+-   `CONTEXT` - The context for building
+    -   Set automatically by Netlify [during deployment](https://docs.netlify.com/site-deploys/overview/#deploy-contexts)
+    -   Defaults to `development`
+-   `DEPLOY_PRIME_URL` - The specific URL of the deployment
+    -   Set automatically by Netlify during deployment
+    -   Only used if the `CONTEXT` is not `development` or `production`
+    -   Can be ignored for development purposes (used automatically in Netliy branch deployments and deployment previews)
 
 [Dotenv](https://www.npmjs.com/package/dotenv) is configured in this project and it is the recommended way to set these variables.
 
@@ -22,6 +30,7 @@ For a local development environment, create a `.env` file at the root of the pro
 
 ```
 SITE_URL=http://localhost:8000
+CONTEXT=development
 ```
 
 ### GraphQL
