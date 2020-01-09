@@ -6,7 +6,7 @@ import defaultImg from "../images/default.jpg"
 import { globalHistory } from "@reach/router"
 
 function Metadata({ description, title }) {
-    const { site } = useStaticQuery(
+    const { site, allFile } = useStaticQuery(
         graphql`
             query {
                 site {
@@ -16,6 +16,14 @@ function Metadata({ description, title }) {
                         description
                         author
                         authorTwitter
+                    }
+                }
+                allFile(
+                    filter: { relativePath: { eq: "favicon.svg" } }
+                    limit: 1
+                ) {
+                    nodes {
+                        publicURL
                     }
                 }
             }
@@ -38,6 +46,12 @@ function Metadata({ description, title }) {
             <link
                 rel="canonical"
                 href={`${site.siteMetadata.siteUrl}${path}`}
+            />
+            <link
+                rel="icon"
+                href={allFile.nodes.pop().publicURL}
+                type="image/svg+xml"
+                sizes="any"
             />
             <meta
                 name="viewport"
