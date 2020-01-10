@@ -1,7 +1,7 @@
 import React from "react"
 
 import styleDemoStyles from "./style-demo.module.scss"
-import DarkModeSwitch from "./layout/dark-mode-switch/dark-mode-switch"
+import DarkModeSwitch from "../layout/dark-mode-switch/dark-mode-switch"
 
 const StyleDemo = () => {
     return (

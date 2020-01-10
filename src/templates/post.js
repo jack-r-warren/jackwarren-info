@@ -3,14 +3,15 @@ import { graphql, Link } from "gatsby"
 import _ from "lodash"
 import rehypeReact from "rehype-react"
 import Layout from "../components/layout/layout"
-import Metadata from "../components/metadata"
+import Metadata from "../components/layout/metadata"
 import DarkModeSwitch from "../components/layout/dark-mode-switch/dark-mode-switch"
 import "../styles/code-format.scss"
-import CutOut from "../components/layout/cut-out"
-import StyleDemo from "../components/style-demo"
+import CutOut from "../components/layout/cut-out/cut-out"
+import StyleDemo from "../components/style-demo/style-demo"
+import ClickToCopy from "../components/click-to-copy/click-to-copy"
+import Note from "../components/note/note"
 
 import postStyles from "./post.module.scss"
-import ClickToCopy from "../components/click-to-copy"
 
 export default ({ data }) => {
     const post = data.markdownRemark
@@ -58,6 +59,7 @@ export default ({ data }) => {
             "cut-out": CutOut,
             "style-demo": StyleDemo,
             "click-to-copy": ClickToCopy,
+            note: Note,
         },
     }).Compiler
 

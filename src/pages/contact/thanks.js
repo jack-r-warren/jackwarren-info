@@ -2,7 +2,7 @@ import React from "react"
 import { Link } from "gatsby"
 
 import Layout from "../../components/layout/layout"
-import Metadata from "../../components/metadata"
+import Metadata from "../../components/layout/metadata"
 
 const ContactFormSentPage = () => (
     <Layout>

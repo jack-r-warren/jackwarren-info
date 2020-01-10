@@ -2,7 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import { Helmet } from "react-helmet"
 import { graphql, useStaticQuery } from "gatsby"
-import defaultImg from "../images/default.jpg"
+import defaultImg from "../../images/default.jpg"
 import { globalHistory } from "@reach/router"
 
 function Metadata({ description, title }) {

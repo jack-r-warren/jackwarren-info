@@ -1,9 +1,9 @@
 import React from "react"
 import { graphql, Link } from "gatsby"
 import Layout from "../components/layout/layout"
-import Metadata from "../components/metadata"
+import Metadata from "../components/layout/metadata"
 import PostList from "../components/post-list/post-list"
-import PaginatedNavigation from "../components/paginated-navigation"
+import PaginatedNavigation from "../components/layout/paginated-navigation/paginated-navigation"
 
 export default ({ data, pageContext }) => {
     const tag = pageContext.selfTag

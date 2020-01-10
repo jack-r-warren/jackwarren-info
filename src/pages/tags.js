@@ -2,8 +2,8 @@ import React from "react"
 import { graphql, Link } from "gatsby"
 
 import Layout from "../components/layout/layout"
-import Metadata from "../components/metadata"
-import TagList from "../components/tag-list"
+import Metadata from "../components/layout/metadata"
+import TagList from "../components/tag-list/tag-list"
 import _ from "lodash"
 
 const AllTagsPage = ({ data }) => (

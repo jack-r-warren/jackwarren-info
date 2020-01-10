@@ -1,8 +1,8 @@
 import React from "react"
 
 import Layout from "../components/layout/layout"
-import Metadata from "../components/metadata"
-import ClickToCopy from "../components/click-to-copy"
+import Metadata from "../components/layout/metadata"
+import ClickToCopy from "../components/click-to-copy/click-to-copy"
 import { graphql } from "gatsby"
 
 import contactStyles from "./contact.module.scss"

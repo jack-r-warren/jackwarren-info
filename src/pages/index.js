@@ -2,8 +2,8 @@ import React from "react"
 import { graphql, Link } from "gatsby"
 
 import Layout from "../components/layout/layout"
-import ProfileImage from "../components/profile-image"
-import Metadata from "../components/metadata"
+import ProfileImage from "../components/images/profile-image"
+import Metadata from "../components/layout/metadata"
 import PostList from "../components/post-list/post-list"
 
 import indexStyles from "./index.module.scss"

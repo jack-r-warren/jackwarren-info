@@ -88,6 +88,14 @@ This is the [Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windo
 set "PATH=%ConEmuBaseDir%\wsl;%PATH%" & wsl.exe
 ```
 
+<note>
+
+When ConEmu (part of Cmder's package) makes its default task for detected WSL distros, it will use [wslbridge](https://github.com/rprichard/wslbridge). That is not what my setup uses—I use `wsl.exe` directly.
+
+Why not use wslbridge? In my experience, I haven't needed the compatibility layer. I've found that things work a little bit smoother without that extra level in between Cmder and WSL (especially WSL 2).
+
+</note>
+
 ## Git Bash
 
 This will call Git's emulated Bash. If you don't use the Git that came with Cmder, you should change the command to point to wherever your Git directory is.

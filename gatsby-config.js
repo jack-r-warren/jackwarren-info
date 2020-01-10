@@ -43,7 +43,8 @@ module.exports = {
                     {
                         resolve: `gatsby-remark-table-of-contents`,
                         options: {
-                            exclude: "((?:Table of )?Contents|In this post)",
+                            exclude:
+                                "((?:Table of )?Contents|In this post|Note)",
                             tight: false,
                             fromHeading: 1,
                             toHeading: 6,
