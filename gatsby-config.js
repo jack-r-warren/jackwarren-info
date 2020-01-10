@@ -30,8 +30,13 @@ module.exports = {
             options: {
                 excerpt_separator: `<!-- endexcerpt -->`,
                 plugins: [
-                    `gatsby-remark-autolink-headers`,
                     `gatsby-remark-responsive-iframe`,
+                    {
+                        resolve: `gatsby-remark-autolink-headers`,
+                        options: {
+                            className: `header-autolink`,
+                        },
+                    },
                     {
                         resolve: `gatsby-remark-copy-linked-files`,
                         options: {

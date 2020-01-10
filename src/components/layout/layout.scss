@@ -241,6 +241,20 @@ img {
     border-radius: $middle-corner;
 }
 
+.header-autolink {
+    width: 5%;
+    text-align: center;
+    fill: var(--body-text-color);
+
+    @media (max-width: $phone-maximum) {
+        visibility: hidden;
+
+        &:hover {
+            visibility: hidden;
+        }
+    }
+}
+
 h1,
 h2,
 h3,
@@ -255,16 +269,6 @@ figcaption {
 
     a {
         color: var(--accent-middle-color);
-    }
-
-    a.anchor.before {
-        width: 5%;
-        text-align: center;
-        fill: var(--body-text-color);
-
-        @media (max-width: $phone-maximum) {
-            visibility: hidden;
-        }
     }
 }
 
