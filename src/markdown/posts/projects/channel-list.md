@@ -6,7 +6,7 @@ tags:
     - React
     - CSS
 featured: true
-featuredImage: ../../../images/posts/projects/channel-list.png
+featuredImage: ./channel-list.png
 ---
 
 When my apartment complex's posted TV channel listings didn't match up with what my TV actually registered, I decided to over-engineer a bit of a solution for myself.
