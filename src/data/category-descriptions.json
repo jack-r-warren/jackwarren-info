@@ -6,5 +6,9 @@
     {
         "category": "/posts/guides/racket",
         "description": "These guides are a product of my enthusiasm for Northeastern University's <a href=\"https://course.ccs.neu.edu/cs2500/index.html\">Fundamentals of Computer Science 1</a> course, which I've been staff for ever since taking it. That course uses <a href=\"https://www.racket-lang.org/\">Racket</a> as the language of choice, and here I've documented some of what I've learned experimenting with it in later courses."
+    },
+    {
+        "category": "/posts/guides/console",
+        "description": "If you were looking for a more specific page and were redirected here, I've changed how my console guides are structured: I'm designing them to supplement first-party documentation, rather than stand on their own. In the case of <a href=\"https://docs.microsoft.com/en-us/windows/wsl\">WSL</a> especially, there are fewer tricks needed to get it working than there used to be."
     }
 ]
