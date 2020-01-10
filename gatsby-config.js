@@ -68,7 +68,7 @@ module.exports = {
                             // layout.module.scss main-box padding
                             maxWidth: 864,
                             showCaptions: [`title`],
-                            backgroundColor: `transparent`,
+                            backgroundColor: `none`,
                         },
                     },
                 ],
