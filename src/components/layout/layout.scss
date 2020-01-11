@@ -465,6 +465,10 @@ iframe {
     border-radius: $middle-corner;
 }
 
+.gatsby-resp-iframe-wrapper {
+    margin: 0 0 1.45rem;
+}
+
 hr {
     box-sizing: content-box;
     overflow: visible;
