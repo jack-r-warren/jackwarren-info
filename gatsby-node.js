@@ -193,6 +193,7 @@ exports.createPages = async ({ graphql, actions }) => {
             // projects
             "/posts/projects/racket-piazza/": "/blog/racket-piazza/",
             "/posts/projects/racket-antivirus/": "/blog/simple-antivirus/",
+            "/posts/projects/minishell/": "/blog/minishell/",
 
             // guides
             // racket
