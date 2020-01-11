@@ -88,9 +88,15 @@ Security headers and redirects are made courtesy of [gatsby-plugin-netlify](http
 
 I'm a bit of a perfectionist, and there's a lot of work I've done on this site that doesn't condense down to a list of features. Some of the smaller highlights that didn't make the cut:
 
+-   Maskable vector and raster favicons are all derived from a single SVG file at build-time, with built-in cache-busting.
+-   In-site navigation is dynamic and doesn't actually reload the page
 -   In code blocks, the line numbers hide on mobile for easier skimming
+-   [gatsby-plugin-sharp](https://www.gatsbyjs.org/packages/gatsby-plugin-sharp/) and [gatsby-transformer-sharp](https://www.gatsbyjs.org/packages/gatsby-transformer-sharp/) use deferred loading for images
 -   It might not be obvious on first glance, but the post pages aren't the only thing generated from markdown: category and link pages are entirely generated too, complete with statically-generated pagination
 -   Inline click-to-copy functionality from the contact page is nice and portable: <click-to-copy copy="jack@jackwarren.info">try me!</click-to-copy>
 -   Markdown parsing is augmented to render custom components (this entire page is just a Markdown file)
+-   Markdown headers are linked automatically and will reveal a link icon upon hovering
 -   [gatsby-plugin-manifest](https://www.gatsbyjs.org/packages/gatsby-plugin-manifest) and [gatsby-plugin-offline](https://www.gatsbyjs.org/packages/gatsby-plugin-offline) make this site work offline as a Progressive Web App
 -   There's a significant amount of linting and workflow support in this site's codebase: beyond what Gatsby already packages in, [Prettier](https://prettier.io/), [Husky](https://github.com/typicode/husky), [stylelint](https://stylelint.io/), and a reflected GraphQL schema are all in use
+-   `robots.txt` files are automatically customized for deployments, so deploying from a branch via Netlify won't be indexed by search engines
+-   An RSS feed is generated from all markdown GraphQL nodes descending from the [posts](/posts) category
