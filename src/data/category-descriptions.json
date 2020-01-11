@@ -9,6 +9,6 @@
     },
     {
         "category": "/posts/guides/console",
-        "description": "If you were looking for a more specific page and were redirected here, I've changed how my console guides are structured: I'm designing them to supplement first-party documentation, rather than stand on their own. In the case of <a href=\"https://docs.microsoft.com/en-us/windows/wsl\">WSL</a> especially, there are fewer tricks needed to get it working than there used to be."
+        "description": "If you were looking for a more specific page and were redirected here, I've changed how my console guides are structured: I'm designing them to supplement first-party documentation, rather than stand on their own. In the case of <a href=\"https://docs.microsoft.com/en-us/windows/wsl\">WSL</a> especially, there are simply far fewer tricks needed to get it working than there used to be."
     }
 ]
