@@ -22,7 +22,6 @@ module.exports = {
         `gatsby-plugin-react-helmet`,
         `gatsby-plugin-sass`,
         `gatsby-plugin-sharp`,
-        `gatsby-plugin-netlify`,
         `gatsby-plugin-netlify-cache`,
         `gatsby-plugin-catch-links`,
         `gatsby-transformer-sharp`,
@@ -211,6 +210,19 @@ module.exports = {
                         feed_url: `${siteUrl}/posts/rss.xml`,
                         copyright: `Copyright ${new Date().getFullYear()} Jack Warren`,
                     },
+                ],
+            },
+        },
+        {
+            resolve: `gatsby-plugin-netlify`,
+            options: {
+                "/sw.js": ["cache-control: public, max-age=0, must-revalidate"],
+                "/*.css": [
+                    "cache-control: public, max-age=31536000, immutable",
+                ],
+                "/*.js": ["cache-control: public, max-age=31536000, immutable"],
+                "/static/*": [
+                    "cache-control: public, max-age=31536000, immutable",
                 ],
             },
         },
