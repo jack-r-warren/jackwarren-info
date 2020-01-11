@@ -1,12 +1,14 @@
 require(`dotenv`).config()
 
+const siteUrl =
+    (process.env.CONTEXT === "production" ||
+    process.env.CONTEXT === "development"
+        ? process.env.URL
+        : process.env.DEPLOY_PRIME_URL) || "https://jackwarren.info"
+
 module.exports = {
     siteMetadata: {
-        siteUrl:
-            (process.env.CONTEXT === "production" ||
-            process.env.CONTEXT === "development"
-                ? process.env.URL
-                : process.env.DEPLOY_PRIME_URL) || "https://jackwarren.info",
+        siteUrl: siteUrl,
         title: `Jack Warren`,
         description: `Blog posts, tutorials, and projects from a cybersecurity undergrad at Northeastern University`,
         author: `Jack Warren`,
@@ -195,9 +197,11 @@ module.exports = {
                             }
                           }
                         `,
-                        output: "/rss.xml",
-                        title: "jackwarren.info RSS",
-                        match: "^/posts/",
+                        output: "/posts/rss.xml",
+                        title: `${siteUrl} Posts`,
+                        match: "^/posts.*",
+                        feed_url: `${siteUrl}/posts/rss.xml`,
+                        copyright: `Copyright ${new Date().getFullYear()} Jack Warren`,
                     },
                 ],
             },
