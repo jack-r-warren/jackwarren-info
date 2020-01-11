@@ -124,7 +124,15 @@ module.exports = {
                 resolveEnv: () => process.env.CONTEXT || "development",
                 env: {
                     production: {
-                        policy: [{ userAgent: "*" }],
+                        policy: [
+                            {
+                                userAgent: "*",
+                                allow: "/",
+                                disallow: ["/contact/thanks"],
+                            },
+                        ],
+                        sitemap: `${siteUrl}/sitemap.xml`,
+                        host: siteUrl,
                     },
                     development: {
                         policy: [{ userAgent: "*", disallow: ["/"] }],
