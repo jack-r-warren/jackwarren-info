@@ -275,19 +275,21 @@ pre[class*="language-"].line-numbers > code {
 
 .command-line-prompt > span::before {
     color: var(--code-comments);
-    content: " ";
+    content: "\200B";
     display: block;
-    padding-right: 0.5rem;
 }
 
 .command-line-prompt > span[data-user]::before {
     content: "[" attr(data-user) "@" attr(data-host) "] $";
+    padding-right: 0.5rem;
 }
 
 .command-line-prompt > span[data-user="root"]::before {
     content: "[" attr(data-user) "@" attr(data-host) "] #";
+    padding-right: 0.5rem;
 }
 
 .command-line-prompt > span[data-prompt]::before {
     content: attr(data-prompt);
+    padding-right: 0.5rem;
 }
