@@ -197,6 +197,7 @@ exports.createPages = async ({ graphql, actions }) => {
             "/posts/projects/robotic-arm/": "/blog/robotic-arm/",
             "/posts/projects/perceptron-network/": "/blog/perceptron-network/",
             "/posts/projects/animator-software/": "/blog/animator-software/",
+            "/posts/projects/add-case-brief/": "/blog/add-case-brief/",
 
             // guides
             // racket
