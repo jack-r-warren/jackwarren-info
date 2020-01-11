@@ -189,12 +189,30 @@ exports.createPages = async ({ graphql, actions }) => {
     _.forIn(
         {
             // new : (old | [old])
+
+            // projects
+            "/posts/projects/racket-piazza/": "/blog/racket-piazza/",
+            "/posts/projects/racket-antivirus/": "/blog/simple-antivirus/",
+
+            // guides
+            // racket
             "/posts/guides/racket/racket-command-line/":
                 "/blog/racket-command-line/",
             "/posts/guides/racket/racket-system-access/":
                 "/blog/racket-system-access/",
-            "/posts/projects/racket-piazza/": "/blog/racket-piazza/",
-            "/posts/projects/racket-antivirus/": "/blog/simple-antivirus/",
+            // console
+            "/posts/guides/console/wsl-config/": "/blog/zsh/",
+            "/posts/guides/console/cmder-tasks/": "/blog/cmder-tasks/",
+            "/posts/guides/console/": [
+                "/blog/ssh-keys/",
+                "/blog/cmder-and-windows/",
+                "/blog/cmder-windows-consoles/",
+                "/blog/wsl-windows-aliases/",
+                "/blog/linux-console-extensions/",
+                "/blog/ls-colors/",
+                "/blog/wsl/",
+                "/blog/cmder/",
+            ],
         },
         (oldPaths, newPath) =>
             _.forEach(
