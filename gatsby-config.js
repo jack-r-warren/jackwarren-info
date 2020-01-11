@@ -216,13 +216,23 @@ module.exports = {
         {
             resolve: `gatsby-plugin-netlify`,
             options: {
-                "/sw.js": ["cache-control: public, max-age=0, must-revalidate"],
-                "/*.css": [
-                    "cache-control: public, max-age=31536000, immutable",
-                ],
-                "/*.js": ["cache-control: public, max-age=31536000, immutable"],
-                "/static/*": [
-                    "cache-control: public, max-age=31536000, immutable",
+                headers: {
+                    "/sw.js": [
+                        "cache-control: public, max-age=0, must-revalidate",
+                    ],
+                    "/*.css": [
+                        "cache-control: public, max-age=31536000, immutable",
+                    ],
+                    "/*.js": [
+                        "cache-control: public, max-age=31536000, immutable",
+                    ],
+                    "/static/*": [
+                        "cache-control: public, max-age=31536000, immutable",
+                    ],
+                },
+                mergeCachingHeaders: false,
+                allPageHeaders: [
+                    "Content-Security-Policy-Report-Only: default-src 'self' 'unsafe-inline'; worker-src 'self'; frame-ancestors 'self'; form-action 'self'; upgrade-insecure-requests; block-all-mixed-content; disown-opener; sandbox allow-forms allow-same-origin allow-scripts; reflected-xss block; base-uri 'self'; referrer no-referrer",
                 ],
             },
         },
