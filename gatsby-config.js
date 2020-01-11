@@ -109,8 +109,8 @@ module.exports = {
                 name: `jackwarren.info`,
                 short_name: `Jack Warren`,
                 start_url: `/`,
-                background_color: `#fff`,
-                theme_color: `#fff`,
+                background_color: `#263238`,
+                theme_color: `#263238`,
                 display: `minimal-ui`,
                 icon: `src/images/favicon.svg`,
                 icon_options: {
