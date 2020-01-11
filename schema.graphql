@@ -228,10 +228,10 @@ type File implements Node {
         #Configures the locale Moment.js will use to format the date.
         locale: String
     ): Date!
-    childCategoryDescriptionsJson: CategoryDescriptionsJson
     childImageSharp: ImageSharp
     childMarkdownRemark: MarkdownRemark
     children: [Node!]!
+    childrenCategoryDescriptionsJson: [CategoryDescriptionsJson]
     ctime(
         #Returns the difference between this date and the current time. Defaults to \"milliseconds\" but you can also pass in as the measurement \"years\", \"months\", \"weeks\", \"days\", \"hours\", \"minutes\", and \"seconds\".
         difference: String
@@ -770,10 +770,10 @@ type Query {
         blksize: IntQueryOperatorInput
         blocks: IntQueryOperatorInput
         changeTime: DateQueryOperatorInput
-        childCategoryDescriptionsJson: CategoryDescriptionsJsonFilterInput
         childImageSharp: ImageSharpFilterInput
         childMarkdownRemark: MarkdownRemarkFilterInput
         children: NodeFilterListInput
+        childrenCategoryDescriptionsJson: CategoryDescriptionsJsonFilterListInput
         ctime: DateQueryOperatorInput
         ctimeMs: FloatQueryOperatorInput
         dev: IntQueryOperatorInput
@@ -1056,26 +1056,24 @@ type SitePluginPackageJsonPeerDependencies {
 type SitePluginPluginOptions {
     backgroundColor: String
     background_color: String
-    disableBgImage: Boolean
-    disableBgImageOnAlpha: Boolean
+    className: String
     display: String
+    env: SitePluginPluginOptionsEnv
     excerpt_separator: String
     exclude: String
+    feeds: [SitePluginPluginOptionsFeeds]
     fromHeading: Int
     icon: String
     icon_options: SitePluginPluginOptionsIcon_options
     ignoreFileExtensions: [String]
     inlineCodeMarker: String
-    linkImagesToOriginal: Boolean
-    loading: String
-    markdownCaptions: Boolean
     maxWidth: Int
     name: String
     path: String
     pathCheck: Boolean
-    pathPrefix: String
     plugins: [SitePluginPluginOptionsPlugins]
     prompt: SitePluginPluginOptionsPrompt
+    query: String
     short_name: String
     showCaptions: [String]
     showLineNumbers: Boolean
@@ -1083,9 +1081,57 @@ type SitePluginPluginOptions {
     theme_color: String
     tight: Boolean
     toHeading: Int
-    tracedSVG: Boolean
-    withWebp: Boolean
-    wrapperStyle: String
+}
+
+type SitePluginPluginOptionsEnv {
+    branch_deploy: SitePluginPluginOptionsEnvBranch_deploy
+    deploy_preview: SitePluginPluginOptionsEnvDeploy_preview
+    development: SitePluginPluginOptionsEnvDevelopment
+    production: SitePluginPluginOptionsEnvProduction
+}
+
+type SitePluginPluginOptionsEnvBranch_deploy {
+    policy: [SitePluginPluginOptionsEnvBranch_deployPolicy]
+}
+
+type SitePluginPluginOptionsEnvBranch_deployPolicy {
+    disallow: [String]
+    userAgent: String
+}
+
+type SitePluginPluginOptionsEnvDeploy_preview {
+    policy: [SitePluginPluginOptionsEnvDeploy_previewPolicy]
+}
+
+type SitePluginPluginOptionsEnvDeploy_previewPolicy {
+    disallow: [String]
+    userAgent: String
+}
+
+type SitePluginPluginOptionsEnvDevelopment {
+    policy: [SitePluginPluginOptionsEnvDevelopmentPolicy]
+}
+
+type SitePluginPluginOptionsEnvDevelopmentPolicy {
+    disallow: [String]
+    userAgent: String
+}
+
+type SitePluginPluginOptionsEnvProduction {
+    policy: [SitePluginPluginOptionsEnvProductionPolicy]
+}
+
+type SitePluginPluginOptionsEnvProductionPolicy {
+    userAgent: String
+}
+
+type SitePluginPluginOptionsFeeds {
+    copyright: String
+    feed_url: String
+    match: String
+    output: String
+    query: String
+    title: String
 }
 
 type SitePluginPluginOptionsIcon_options {
@@ -1105,25 +1151,17 @@ type SitePluginPluginOptionsPlugins {
 
 type SitePluginPluginOptionsPluginsPluginOptions {
     backgroundColor: String
-    disableBgImage: Boolean
-    disableBgImageOnAlpha: Boolean
+    className: String
     exclude: String
     fromHeading: Int
     ignoreFileExtensions: [String]
     inlineCodeMarker: String
-    linkImagesToOriginal: Boolean
-    loading: String
-    markdownCaptions: Boolean
     maxWidth: Int
-    pathPrefix: String
     prompt: SitePluginPluginOptionsPluginsPluginOptionsPrompt
     showCaptions: [String]
     showLineNumbers: Boolean
     tight: Boolean
     toHeading: Int
-    tracedSVG: Boolean
-    withWebp: Boolean
-    wrapperStyle: String
 }
 
 type SitePluginPluginOptionsPluginsPluginOptionsPrompt {
@@ -1375,46 +1413,6 @@ enum FileFieldsEnum {
     blksize
     blocks
     changeTime
-    childCategoryDescriptionsJson___category
-    childCategoryDescriptionsJson___children
-    childCategoryDescriptionsJson___children___children
-    childCategoryDescriptionsJson___children___children___children
-    childCategoryDescriptionsJson___children___children___id
-    childCategoryDescriptionsJson___children___id
-    childCategoryDescriptionsJson___children___internal___content
-    childCategoryDescriptionsJson___children___internal___contentDigest
-    childCategoryDescriptionsJson___children___internal___description
-    childCategoryDescriptionsJson___children___internal___fieldOwners
-    childCategoryDescriptionsJson___children___internal___ignoreType
-    childCategoryDescriptionsJson___children___internal___mediaType
-    childCategoryDescriptionsJson___children___internal___owner
-    childCategoryDescriptionsJson___children___internal___type
-    childCategoryDescriptionsJson___children___parent___children
-    childCategoryDescriptionsJson___children___parent___id
-    childCategoryDescriptionsJson___description
-    childCategoryDescriptionsJson___id
-    childCategoryDescriptionsJson___internal___content
-    childCategoryDescriptionsJson___internal___contentDigest
-    childCategoryDescriptionsJson___internal___description
-    childCategoryDescriptionsJson___internal___fieldOwners
-    childCategoryDescriptionsJson___internal___ignoreType
-    childCategoryDescriptionsJson___internal___mediaType
-    childCategoryDescriptionsJson___internal___owner
-    childCategoryDescriptionsJson___internal___type
-    childCategoryDescriptionsJson___parent___children
-    childCategoryDescriptionsJson___parent___children___children
-    childCategoryDescriptionsJson___parent___children___id
-    childCategoryDescriptionsJson___parent___id
-    childCategoryDescriptionsJson___parent___internal___content
-    childCategoryDescriptionsJson___parent___internal___contentDigest
-    childCategoryDescriptionsJson___parent___internal___description
-    childCategoryDescriptionsJson___parent___internal___fieldOwners
-    childCategoryDescriptionsJson___parent___internal___ignoreType
-    childCategoryDescriptionsJson___parent___internal___mediaType
-    childCategoryDescriptionsJson___parent___internal___owner
-    childCategoryDescriptionsJson___parent___internal___type
-    childCategoryDescriptionsJson___parent___parent___children
-    childCategoryDescriptionsJson___parent___parent___id
     childImageSharp___children
         @deprecated(
             reason: "Sorting on fields that need arguments to resolve is deprecated."
@@ -1907,6 +1905,10 @@ enum FileFieldsEnum {
         @deprecated(
             reason: "Sorting on fields that need arguments to resolve is deprecated."
         )
+    childMarkdownRemark___fields___featuredImage___childrenCategoryDescriptionsJson
+        @deprecated(
+            reason: "Sorting on fields that need arguments to resolve is deprecated."
+        )
     childMarkdownRemark___fields___featuredImage___ctime
         @deprecated(
             reason: "Sorting on fields that need arguments to resolve is deprecated."
@@ -2033,6 +2035,7 @@ enum FileFieldsEnum {
     childMarkdownRemark___frontmatter___featuredImage___blocks
     childMarkdownRemark___frontmatter___featuredImage___changeTime
     childMarkdownRemark___frontmatter___featuredImage___children
+    childMarkdownRemark___frontmatter___featuredImage___childrenCategoryDescriptionsJson
     childMarkdownRemark___frontmatter___featuredImage___ctime
     childMarkdownRemark___frontmatter___featuredImage___ctimeMs
     childMarkdownRemark___frontmatter___featuredImage___dev
@@ -2193,6 +2196,47 @@ enum FileFieldsEnum {
             reason: "Sorting on fields that need arguments to resolve is deprecated."
         )
     children
+    childrenCategoryDescriptionsJson
+    childrenCategoryDescriptionsJson___category
+    childrenCategoryDescriptionsJson___children
+    childrenCategoryDescriptionsJson___children___children
+    childrenCategoryDescriptionsJson___children___children___children
+    childrenCategoryDescriptionsJson___children___children___id
+    childrenCategoryDescriptionsJson___children___id
+    childrenCategoryDescriptionsJson___children___internal___content
+    childrenCategoryDescriptionsJson___children___internal___contentDigest
+    childrenCategoryDescriptionsJson___children___internal___description
+    childrenCategoryDescriptionsJson___children___internal___fieldOwners
+    childrenCategoryDescriptionsJson___children___internal___ignoreType
+    childrenCategoryDescriptionsJson___children___internal___mediaType
+    childrenCategoryDescriptionsJson___children___internal___owner
+    childrenCategoryDescriptionsJson___children___internal___type
+    childrenCategoryDescriptionsJson___children___parent___children
+    childrenCategoryDescriptionsJson___children___parent___id
+    childrenCategoryDescriptionsJson___description
+    childrenCategoryDescriptionsJson___id
+    childrenCategoryDescriptionsJson___internal___content
+    childrenCategoryDescriptionsJson___internal___contentDigest
+    childrenCategoryDescriptionsJson___internal___description
+    childrenCategoryDescriptionsJson___internal___fieldOwners
+    childrenCategoryDescriptionsJson___internal___ignoreType
+    childrenCategoryDescriptionsJson___internal___mediaType
+    childrenCategoryDescriptionsJson___internal___owner
+    childrenCategoryDescriptionsJson___internal___type
+    childrenCategoryDescriptionsJson___parent___children
+    childrenCategoryDescriptionsJson___parent___children___children
+    childrenCategoryDescriptionsJson___parent___children___id
+    childrenCategoryDescriptionsJson___parent___id
+    childrenCategoryDescriptionsJson___parent___internal___content
+    childrenCategoryDescriptionsJson___parent___internal___contentDigest
+    childrenCategoryDescriptionsJson___parent___internal___description
+    childrenCategoryDescriptionsJson___parent___internal___fieldOwners
+    childrenCategoryDescriptionsJson___parent___internal___ignoreType
+    childrenCategoryDescriptionsJson___parent___internal___mediaType
+    childrenCategoryDescriptionsJson___parent___internal___owner
+    childrenCategoryDescriptionsJson___parent___internal___type
+    childrenCategoryDescriptionsJson___parent___parent___children
+    childrenCategoryDescriptionsJson___parent___parent___id
     children___children
     children___children___children
     children___children___children___children
@@ -3125,22 +3169,6 @@ enum MarkdownRemarkFieldsEnum {
         @deprecated(
             reason: "Sorting on fields that need arguments to resolve is deprecated."
         )
-    fields___featuredImage___childCategoryDescriptionsJson___category
-        @deprecated(
-            reason: "Sorting on fields that need arguments to resolve is deprecated."
-        )
-    fields___featuredImage___childCategoryDescriptionsJson___children
-        @deprecated(
-            reason: "Sorting on fields that need arguments to resolve is deprecated."
-        )
-    fields___featuredImage___childCategoryDescriptionsJson___description
-        @deprecated(
-            reason: "Sorting on fields that need arguments to resolve is deprecated."
-        )
-    fields___featuredImage___childCategoryDescriptionsJson___id
-        @deprecated(
-            reason: "Sorting on fields that need arguments to resolve is deprecated."
-        )
     fields___featuredImage___childImageSharp___children
         @deprecated(
             reason: "Sorting on fields that need arguments to resolve is deprecated."
@@ -3194,6 +3222,26 @@ enum MarkdownRemarkFieldsEnum {
             reason: "Sorting on fields that need arguments to resolve is deprecated."
         )
     fields___featuredImage___children
+        @deprecated(
+            reason: "Sorting on fields that need arguments to resolve is deprecated."
+        )
+    fields___featuredImage___childrenCategoryDescriptionsJson
+        @deprecated(
+            reason: "Sorting on fields that need arguments to resolve is deprecated."
+        )
+    fields___featuredImage___childrenCategoryDescriptionsJson___category
+        @deprecated(
+            reason: "Sorting on fields that need arguments to resolve is deprecated."
+        )
+    fields___featuredImage___childrenCategoryDescriptionsJson___children
+        @deprecated(
+            reason: "Sorting on fields that need arguments to resolve is deprecated."
+        )
+    fields___featuredImage___childrenCategoryDescriptionsJson___description
+        @deprecated(
+            reason: "Sorting on fields that need arguments to resolve is deprecated."
+        )
+    fields___featuredImage___childrenCategoryDescriptionsJson___id
         @deprecated(
             reason: "Sorting on fields that need arguments to resolve is deprecated."
         )
@@ -3370,10 +3418,6 @@ enum MarkdownRemarkFieldsEnum {
     frontmatter___featuredImage___blksize
     frontmatter___featuredImage___blocks
     frontmatter___featuredImage___changeTime
-    frontmatter___featuredImage___childCategoryDescriptionsJson___category
-    frontmatter___featuredImage___childCategoryDescriptionsJson___children
-    frontmatter___featuredImage___childCategoryDescriptionsJson___description
-    frontmatter___featuredImage___childCategoryDescriptionsJson___id
     frontmatter___featuredImage___childImageSharp___children
         @deprecated(
             reason: "Sorting on fields that need arguments to resolve is deprecated."
@@ -3424,6 +3468,11 @@ enum MarkdownRemarkFieldsEnum {
             reason: "Sorting on fields that need arguments to resolve is deprecated."
         )
     frontmatter___featuredImage___children
+    frontmatter___featuredImage___childrenCategoryDescriptionsJson
+    frontmatter___featuredImage___childrenCategoryDescriptionsJson___category
+    frontmatter___featuredImage___childrenCategoryDescriptionsJson___children
+    frontmatter___featuredImage___childrenCategoryDescriptionsJson___description
+    frontmatter___featuredImage___childrenCategoryDescriptionsJson___id
     frontmatter___featuredImage___children___children
     frontmatter___featuredImage___children___id
     frontmatter___featuredImage___ctime
@@ -3968,24 +4017,26 @@ enum SitePageFieldsEnum {
     pluginCreator___pluginFilepath
     pluginCreator___pluginOptions___backgroundColor
     pluginCreator___pluginOptions___background_color
-    pluginCreator___pluginOptions___disableBgImage
-    pluginCreator___pluginOptions___disableBgImageOnAlpha
+    pluginCreator___pluginOptions___className
     pluginCreator___pluginOptions___display
     pluginCreator___pluginOptions___excerpt_separator
     pluginCreator___pluginOptions___exclude
+    pluginCreator___pluginOptions___feeds
+    pluginCreator___pluginOptions___feeds___copyright
+    pluginCreator___pluginOptions___feeds___feed_url
+    pluginCreator___pluginOptions___feeds___match
+    pluginCreator___pluginOptions___feeds___output
+    pluginCreator___pluginOptions___feeds___query
+    pluginCreator___pluginOptions___feeds___title
     pluginCreator___pluginOptions___fromHeading
     pluginCreator___pluginOptions___icon
     pluginCreator___pluginOptions___icon_options___purpose
     pluginCreator___pluginOptions___ignoreFileExtensions
     pluginCreator___pluginOptions___inlineCodeMarker
-    pluginCreator___pluginOptions___linkImagesToOriginal
-    pluginCreator___pluginOptions___loading
-    pluginCreator___pluginOptions___markdownCaptions
     pluginCreator___pluginOptions___maxWidth
     pluginCreator___pluginOptions___name
     pluginCreator___pluginOptions___path
     pluginCreator___pluginOptions___pathCheck
-    pluginCreator___pluginOptions___pathPrefix
     pluginCreator___pluginOptions___plugins
     pluginCreator___pluginOptions___plugins___browserAPIs
     pluginCreator___pluginOptions___plugins___id
@@ -3997,6 +4048,7 @@ enum SitePageFieldsEnum {
     pluginCreator___pluginOptions___prompt___global
     pluginCreator___pluginOptions___prompt___host
     pluginCreator___pluginOptions___prompt___user
+    pluginCreator___pluginOptions___query
     pluginCreator___pluginOptions___short_name
     pluginCreator___pluginOptions___showCaptions
     pluginCreator___pluginOptions___showLineNumbers
@@ -4004,9 +4056,6 @@ enum SitePageFieldsEnum {
     pluginCreator___pluginOptions___theme_color
     pluginCreator___pluginOptions___tight
     pluginCreator___pluginOptions___toHeading
-    pluginCreator___pluginOptions___tracedSVG
-    pluginCreator___pluginOptions___withWebp
-    pluginCreator___pluginOptions___wrapperStyle
     pluginCreator___resolve
     pluginCreator___ssrAPIs
     pluginCreator___version
@@ -4120,54 +4169,53 @@ enum SitePluginFieldsEnum {
     pluginFilepath
     pluginOptions___backgroundColor
     pluginOptions___background_color
-    pluginOptions___disableBgImage
-    pluginOptions___disableBgImageOnAlpha
+    pluginOptions___className
     pluginOptions___display
+    pluginOptions___env___branch_deploy___policy
+    pluginOptions___env___deploy_preview___policy
+    pluginOptions___env___development___policy
+    pluginOptions___env___production___policy
     pluginOptions___excerpt_separator
     pluginOptions___exclude
+    pluginOptions___feeds
+    pluginOptions___feeds___copyright
+    pluginOptions___feeds___feed_url
+    pluginOptions___feeds___match
+    pluginOptions___feeds___output
+    pluginOptions___feeds___query
+    pluginOptions___feeds___title
     pluginOptions___fromHeading
     pluginOptions___icon
     pluginOptions___icon_options___purpose
     pluginOptions___ignoreFileExtensions
     pluginOptions___inlineCodeMarker
-    pluginOptions___linkImagesToOriginal
-    pluginOptions___loading
-    pluginOptions___markdownCaptions
     pluginOptions___maxWidth
     pluginOptions___name
     pluginOptions___path
     pluginOptions___pathCheck
-    pluginOptions___pathPrefix
     pluginOptions___plugins
     pluginOptions___plugins___browserAPIs
     pluginOptions___plugins___id
     pluginOptions___plugins___name
     pluginOptions___plugins___pluginFilepath
     pluginOptions___plugins___pluginOptions___backgroundColor
-    pluginOptions___plugins___pluginOptions___disableBgImage
-    pluginOptions___plugins___pluginOptions___disableBgImageOnAlpha
+    pluginOptions___plugins___pluginOptions___className
     pluginOptions___plugins___pluginOptions___exclude
     pluginOptions___plugins___pluginOptions___fromHeading
     pluginOptions___plugins___pluginOptions___ignoreFileExtensions
     pluginOptions___plugins___pluginOptions___inlineCodeMarker
-    pluginOptions___plugins___pluginOptions___linkImagesToOriginal
-    pluginOptions___plugins___pluginOptions___loading
-    pluginOptions___plugins___pluginOptions___markdownCaptions
     pluginOptions___plugins___pluginOptions___maxWidth
-    pluginOptions___plugins___pluginOptions___pathPrefix
     pluginOptions___plugins___pluginOptions___showCaptions
     pluginOptions___plugins___pluginOptions___showLineNumbers
     pluginOptions___plugins___pluginOptions___tight
     pluginOptions___plugins___pluginOptions___toHeading
-    pluginOptions___plugins___pluginOptions___tracedSVG
-    pluginOptions___plugins___pluginOptions___withWebp
-    pluginOptions___plugins___pluginOptions___wrapperStyle
     pluginOptions___plugins___resolve
     pluginOptions___plugins___ssrAPIs
     pluginOptions___plugins___version
     pluginOptions___prompt___global
     pluginOptions___prompt___host
     pluginOptions___prompt___user
+    pluginOptions___query
     pluginOptions___short_name
     pluginOptions___showCaptions
     pluginOptions___showLineNumbers
@@ -4175,9 +4223,6 @@ enum SitePluginFieldsEnum {
     pluginOptions___theme_color
     pluginOptions___tight
     pluginOptions___toHeading
-    pluginOptions___tracedSVG
-    pluginOptions___withWebp
-    pluginOptions___wrapperStyle
     resolve
     ssrAPIs
     version
@@ -4202,6 +4247,10 @@ input CategoryDescriptionsJsonFilterInput {
     id: StringQueryOperatorInput
     internal: InternalFilterInput
     parent: NodeFilterInput
+}
+
+input CategoryDescriptionsJsonFilterListInput {
+    elemMatch: CategoryDescriptionsJsonFilterInput
 }
 
 input CategoryDescriptionsJsonSortInput {
@@ -4283,10 +4332,10 @@ input FileFilterInput {
     blksize: IntQueryOperatorInput
     blocks: IntQueryOperatorInput
     changeTime: DateQueryOperatorInput
-    childCategoryDescriptionsJson: CategoryDescriptionsJsonFilterInput
     childImageSharp: ImageSharpFilterInput
     childMarkdownRemark: MarkdownRemarkFilterInput
     children: NodeFilterListInput
+    childrenCategoryDescriptionsJson: CategoryDescriptionsJsonFilterListInput
     ctime: DateQueryOperatorInput
     ctimeMs: FloatQueryOperatorInput
     dev: IntQueryOperatorInput
@@ -4633,29 +4682,98 @@ input SitePluginPackageJsonPeerDependenciesFilterListInput {
     elemMatch: SitePluginPackageJsonPeerDependenciesFilterInput
 }
 
+input SitePluginPluginOptionsEnvBranch_deployFilterInput {
+    policy: SitePluginPluginOptionsEnvBranch_deployPolicyFilterListInput
+}
+
+input SitePluginPluginOptionsEnvBranch_deployPolicyFilterInput {
+    disallow: StringQueryOperatorInput
+    userAgent: StringQueryOperatorInput
+}
+
+input SitePluginPluginOptionsEnvBranch_deployPolicyFilterListInput {
+    elemMatch: SitePluginPluginOptionsEnvBranch_deployPolicyFilterInput
+}
+
+input SitePluginPluginOptionsEnvDeploy_previewFilterInput {
+    policy: SitePluginPluginOptionsEnvDeploy_previewPolicyFilterListInput
+}
+
+input SitePluginPluginOptionsEnvDeploy_previewPolicyFilterInput {
+    disallow: StringQueryOperatorInput
+    userAgent: StringQueryOperatorInput
+}
+
+input SitePluginPluginOptionsEnvDeploy_previewPolicyFilterListInput {
+    elemMatch: SitePluginPluginOptionsEnvDeploy_previewPolicyFilterInput
+}
+
+input SitePluginPluginOptionsEnvDevelopmentFilterInput {
+    policy: SitePluginPluginOptionsEnvDevelopmentPolicyFilterListInput
+}
+
+input SitePluginPluginOptionsEnvDevelopmentPolicyFilterInput {
+    disallow: StringQueryOperatorInput
+    userAgent: StringQueryOperatorInput
+}
+
+input SitePluginPluginOptionsEnvDevelopmentPolicyFilterListInput {
+    elemMatch: SitePluginPluginOptionsEnvDevelopmentPolicyFilterInput
+}
+
+input SitePluginPluginOptionsEnvFilterInput {
+    branch_deploy: SitePluginPluginOptionsEnvBranch_deployFilterInput
+    deploy_preview: SitePluginPluginOptionsEnvDeploy_previewFilterInput
+    development: SitePluginPluginOptionsEnvDevelopmentFilterInput
+    production: SitePluginPluginOptionsEnvProductionFilterInput
+}
+
+input SitePluginPluginOptionsEnvProductionFilterInput {
+    policy: SitePluginPluginOptionsEnvProductionPolicyFilterListInput
+}
+
+input SitePluginPluginOptionsEnvProductionPolicyFilterInput {
+    userAgent: StringQueryOperatorInput
+}
+
+input SitePluginPluginOptionsEnvProductionPolicyFilterListInput {
+    elemMatch: SitePluginPluginOptionsEnvProductionPolicyFilterInput
+}
+
+input SitePluginPluginOptionsFeedsFilterInput {
+    copyright: StringQueryOperatorInput
+    feed_url: StringQueryOperatorInput
+    match: StringQueryOperatorInput
+    output: StringQueryOperatorInput
+    query: StringQueryOperatorInput
+    title: StringQueryOperatorInput
+}
+
+input SitePluginPluginOptionsFeedsFilterListInput {
+    elemMatch: SitePluginPluginOptionsFeedsFilterInput
+}
+
 input SitePluginPluginOptionsFilterInput {
     backgroundColor: StringQueryOperatorInput
     background_color: StringQueryOperatorInput
-    disableBgImage: BooleanQueryOperatorInput
-    disableBgImageOnAlpha: BooleanQueryOperatorInput
+    className: StringQueryOperatorInput
     display: StringQueryOperatorInput
+    env: SitePluginPluginOptionsEnvFilterInput
     excerpt_separator: StringQueryOperatorInput
     exclude: StringQueryOperatorInput
+    feeds: SitePluginPluginOptionsFeedsFilterListInput
     fromHeading: IntQueryOperatorInput
     icon: StringQueryOperatorInput
     icon_options: SitePluginPluginOptionsIcon_optionsFilterInput
     ignoreFileExtensions: StringQueryOperatorInput
     inlineCodeMarker: StringQueryOperatorInput
-    linkImagesToOriginal: BooleanQueryOperatorInput
-    loading: StringQueryOperatorInput
-    markdownCaptions: BooleanQueryOperatorInput
     maxWidth: IntQueryOperatorInput
     name: StringQueryOperatorInput
     path: StringQueryOperatorInput
     pathCheck: BooleanQueryOperatorInput
-    pathPrefix: StringQueryOperatorInput
     plugins: SitePluginPluginOptionsPluginsFilterListInput
     prompt: SitePluginPluginOptionsPromptFilterInput
+    query: StringQueryOperatorInput
     short_name: StringQueryOperatorInput
     showCaptions: StringQueryOperatorInput
     showLineNumbers: BooleanQueryOperatorInput
@@ -4663,9 +4781,6 @@ input SitePluginPluginOptionsFilterInput {
     theme_color: StringQueryOperatorInput
     tight: BooleanQueryOperatorInput
     toHeading: IntQueryOperatorInput
-    tracedSVG: BooleanQueryOperatorInput
-    withWebp: BooleanQueryOperatorInput
-    wrapperStyle: StringQueryOperatorInput
 }
 
 input SitePluginPluginOptionsIcon_optionsFilterInput {
@@ -4689,25 +4804,17 @@ input SitePluginPluginOptionsPluginsFilterListInput {
 
 input SitePluginPluginOptionsPluginsPluginOptionsFilterInput {
     backgroundColor: StringQueryOperatorInput
-    disableBgImage: BooleanQueryOperatorInput
-    disableBgImageOnAlpha: BooleanQueryOperatorInput
+    className: StringQueryOperatorInput
     exclude: StringQueryOperatorInput
     fromHeading: IntQueryOperatorInput
     ignoreFileExtensions: StringQueryOperatorInput
     inlineCodeMarker: StringQueryOperatorInput
-    linkImagesToOriginal: BooleanQueryOperatorInput
-    loading: StringQueryOperatorInput
-    markdownCaptions: BooleanQueryOperatorInput
     maxWidth: IntQueryOperatorInput
-    pathPrefix: StringQueryOperatorInput
     prompt: SitePluginPluginOptionsPluginsPluginOptionsPromptFilterInput
     showCaptions: StringQueryOperatorInput
     showLineNumbers: BooleanQueryOperatorInput
     tight: BooleanQueryOperatorInput
     toHeading: IntQueryOperatorInput
-    tracedSVG: BooleanQueryOperatorInput
-    withWebp: BooleanQueryOperatorInput
-    wrapperStyle: StringQueryOperatorInput
 }
 
 input SitePluginPluginOptionsPluginsPluginOptionsPromptFilterInput {
