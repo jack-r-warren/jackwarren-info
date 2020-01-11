@@ -75,6 +75,14 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
 
 exports.createPages = async ({ graphql, actions }) => {
     const { createPage, createRedirect } = actions
+
+    createRedirect({
+        fromPath: "https://jackwarren-info.netlify.com/*",
+        toPath: "https://jackwarren.info/:splat",
+        isPermanent: true,
+        force: true,
+    })
+
     const createFirstPageRedirect = baseSlug =>
         createRedirect({
             fromPath: `${baseSlug}/1`,
