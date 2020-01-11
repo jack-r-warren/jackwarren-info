@@ -232,7 +232,7 @@ module.exports = {
                 },
                 mergeCachingHeaders: false,
                 allPageHeaders: [
-                    "Content-Security-Policy-Report-Only: default-src 'self' 'unsafe-inline'; worker-src 'self'; frame-ancestors 'self'; form-action 'self'; upgrade-insecure-requests; block-all-mixed-content; disown-opener; sandbox allow-forms allow-same-origin allow-scripts; reflected-xss block; base-uri 'self'; referrer no-referrer",
+                    "Content-Security-Policy-Report-Only: default-src 'unsafe-inline' https:; connect-src https: wss:; frame-ancestors https:; form-action https:; upgrade-insecure-requests; disown-opener; reflected-xss block; referrer no-referrer",
                 ],
             },
         },
