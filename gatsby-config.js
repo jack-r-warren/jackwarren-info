@@ -217,9 +217,6 @@ module.exports = {
             resolve: `gatsby-plugin-netlify`,
             options: {
                 headers: {
-                    "/sw.js": [
-                        "cache-control: public, max-age=0, must-revalidate",
-                    ],
                     "/*.css": [
                         "cache-control: public, max-age=31536000, immutable",
                     ],
@@ -228,6 +225,9 @@ module.exports = {
                     ],
                     "/static/*": [
                         "cache-control: public, max-age=31536000, immutable",
+                    ],
+                    "/sw.js": [
+                        "cache-control: public, max-age=0, must-revalidate",
                     ],
                 },
                 mergeCachingHeaders: false,
