@@ -13,9 +13,9 @@ When my apartment complex's posted TV channel listings didn't match up with what
 
 <!-- endexcerpt -->
 
-The web app is deployed to GitHub pages [right here](https://jack-r-warren.github.io/channel-list/), and I've embedded it below too:
+The web app is deployed to GitHub pages and proxied by Cloudflare to be available at [channel-list.jackwarren.info](https://channel-list.jackwarren.info). A small preview is below:
 
-<iframe src="https://jack-r-warren.github.io/channel-list/" style="width:100%;height:350px"></iframe>
+<iframe src="https://channel-list.jackwarren.info" style="width:100%;height:400px;"></iframe>
 
 The source code is available [on GitHub](https://github.com/jack-r-warren/channel-list).
 
