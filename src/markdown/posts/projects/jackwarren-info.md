@@ -81,9 +81,9 @@ Thanks here go to [Prism](https://prismjs.com/) and Gatsby's [plugin and resourc
     <img src="https://api.netlify.com/api/v1/badges/d5c1c4a8-c3aa-4940-8cb9-c8511672e545/deploy-status" alt="Netlify Status Indicator" style="border-radius: unset; margin: 0;">
 </a>
 
-This site is deployed to [Netlify](https://www.netlify.com/), with their GitHub integration providing a continuous deployment pipeline.
+This site is deployed to [Netlify](https://www.netlify.com/), with their GitHub integration providing a continuous deployment pipeline. DNS and proxying are done with [Cloudflare](https://www.cloudflare.com/).
 
-Security headers and redirects are made courtesy of [gatsby-plugin-netlify](https://www.gatsbyjs.org/packages/gatsby-plugin-netlify/).
+Headers and redirects are made courtesy of [gatsby-plugin-netlify](https://www.gatsbyjs.org/packages/gatsby-plugin-netlify/).
 
 ### Addendum: Details
 
