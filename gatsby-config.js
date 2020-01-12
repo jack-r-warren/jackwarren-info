@@ -232,6 +232,7 @@ module.exports = {
                 },
                 mergeCachingHeaders: false,
                 allPageHeaders: [
+                    "Strict-Transport-Security: max-age=63072000; includeSubDomains; preload",
                     "Content-Security-Policy: default-src data: 'unsafe-inline' https:; connect-src https: wss:; frame-ancestors https:; form-action https:; upgrade-insecure-requests; disown-opener; reflected-xss block; referrer no-referrer",
                 ],
             },
