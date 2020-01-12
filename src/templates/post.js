@@ -1,6 +1,5 @@
 import React from "react"
-import { graphql, Link } from "gatsby"
-import _ from "lodash"
+import { graphql } from "gatsby"
 import rehypeReact from "rehype-react"
 import Layout from "../components/layout/layout"
 import Metadata from "../components/layout/metadata"
@@ -10,40 +9,16 @@ import CutOut from "../components/layout/cut-out/cut-out"
 import StyleDemo from "../components/style-demo/style-demo"
 import ClickToCopy from "../components/click-to-copy/click-to-copy"
 import Note from "../components/note/note"
+import { categoryString, dateString, tagString } from "../util/post-util"
 
 import postStyles from "./post.module.scss"
 
 export default ({ data }) => {
     const post = data.markdownRemark
     const info = [
-        ...(post.fields.categories.length > 0
-            ? [
-                  [
-                      "In ",
-                      post.fields.categories
-                          .map(cat => (
-                              <Link key={cat} to={cat}>
-                                  {_.startCase(cat.split("/").pop())}
-                              </Link>
-                          ))
-                          .reduce((prev, current) => [prev, " / ", current]),
-                  ],
-              ]
-            : []),
-        ...(post.fields.date !== null
-            ? [<span key={post.fields.date}>{post.fields.date}</span>]
-            : []),
-        ...(post.fields.tags.length > 0
-            ? [
-                  post.fields.tags
-                      .map(tag => (
-                          <Link key={tag} to={`/tags/${_.kebabCase(tag)}`}>
-                              {tag}
-                          </Link>
-                      ))
-                      .reduce((prev, curr) => [prev, ", ", curr]),
-              ]
-            : []),
+        ...(categoryString(post) || []),
+        ...(dateString(post) || []),
+        ...(tagString(post) || []),
     ]
     const joinedInfo =
         info.length > 1

@@ -1,7 +1,7 @@
 @import "../../styles/variables";
 
 .feature-posts-container {
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
 
     @media (min-width: $phone-maximum) {
         display: flex;

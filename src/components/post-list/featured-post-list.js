@@ -3,7 +3,7 @@ import Img from "gatsby-image"
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 
-import featuredPostListStyles from "./feature-post-list.module.scss"
+import featuredPostListStyles from "./featured-post-list.module.scss"
 
 const FeaturedPostList = ({ postNodes }) => {
     return postNodes.length > 0 ? (

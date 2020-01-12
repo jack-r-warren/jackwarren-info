@@ -45,6 +45,7 @@ export const query = graphql`
                 fields {
                     slug
                     title
+                    categories
                 }
             }
         }

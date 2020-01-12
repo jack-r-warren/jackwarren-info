@@ -78,7 +78,10 @@ export default ({ data, pageContext }) => {
                             totalPages={pageContext.totalPages}
                             baseSlug={pageContext.selfCategory}
                         />
-                        <PostList postNodes={data.allPosts.nodes} />
+                        <PostList
+                            postNodes={data.allPosts.nodes}
+                            showCategories={false}
+                        />
                         <PaginatedNavigation
                             selfPage={pageContext.selfPage}
                             totalPages={pageContext.totalPages}
@@ -113,6 +116,7 @@ export const query = graphql`
                 fields {
                     slug
                     title
+                    categories
                 }
             }
         }
