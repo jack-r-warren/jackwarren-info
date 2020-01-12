@@ -1,3 +1,17 @@
 [build]
     publish = "public/"
     command = "gatsby build"
+[build.processing]
+  skip_processing = false
+[build.processing.css]
+# Webpack already does bundling, we don't want to be overzealous
+  bundle = false
+  minify = true
+[build.processing.js]
+# Webpack already does bundling, we don't want to be overzealous
+  bundle = false
+  minify = true
+[build.processing.html]
+  pretty_urls = true
+[build.processing.images]
+  compress = true
