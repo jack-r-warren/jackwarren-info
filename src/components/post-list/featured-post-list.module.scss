@@ -8,6 +8,10 @@
     }
 }
 
+.post-title {
+    margin-bottom: 0.75rem;
+}
+
 .post-item {
     // 0<unit> is needed for IE11, https://github.com/philipwalton/flexbugs#flexbug-4
     //noinspection Stylelint,CssRedundantUnit

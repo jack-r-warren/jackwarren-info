@@ -21,7 +21,7 @@ const FeaturedPostList = ({ postNodes }) => {
                             }
                         />
                     </Link>
-                    <h2>
+                    <h2 className={featuredPostListStyles.postTitle}>
                         <Link to={node.fields.slug}>{node.fields.title}</Link>
                     </h2>
                     <p>
