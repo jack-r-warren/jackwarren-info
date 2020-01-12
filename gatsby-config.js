@@ -216,21 +216,6 @@ module.exports = {
         {
             resolve: `gatsby-plugin-netlify`,
             options: {
-                headers: {
-                    "/*.css": [
-                        "cache-control: public, max-age=31536000, immutable",
-                    ],
-                    "/*.js": [
-                        "cache-control: public, max-age=31536000, immutable",
-                    ],
-                    "/static/*": [
-                        "cache-control: public, max-age=31536000, immutable",
-                    ],
-                    "/sw.js": [
-                        "cache-control: public, max-age=0, must-revalidate",
-                    ],
-                },
-                mergeCachingHeaders: false,
                 allPageHeaders: [
                     "Strict-Transport-Security: max-age=63072000; includeSubDomains; preload",
                     "Content-Security-Policy: default-src data: 'unsafe-inline' https:; connect-src https: wss:; frame-ancestors https:; form-action https:; upgrade-insecure-requests; disown-opener; reflected-xss block; referrer no-referrer",
