@@ -10,12 +10,13 @@ const TagList = ({ countMap, showTitle, className }) => {
             const tag = pair[0]
             const count = pair[1]
             soFar.push(
-                <Link
-                    key={tag}
-                    to={`/tags/${_.kebabCase(tag)}`}
-                >{`${tag} (${count})`}</Link>
+                <span key={tag}>
+                    <Link
+                        to={`/tags/${_.kebabCase(tag)}`}
+                    >{`${tag} (${count})`}</Link>
+                    <br />
+                </span>
             )
-            soFar.push(<br />)
             return soFar
         }, [])
     return tagLinks.length > 0 ? (
