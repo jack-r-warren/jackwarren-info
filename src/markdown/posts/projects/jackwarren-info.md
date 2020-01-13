@@ -85,6 +85,8 @@ This site is deployed to [Netlify](https://www.netlify.com/), with their GitHub 
 
 Headers and redirects are made courtesy of [gatsby-plugin-netlify](https://www.gatsbyjs.org/packages/gatsby-plugin-netlify/).
 
+In addition, [Dependabot](https://dependabot.com/) updates packages when possible. It waits for Netlify to deploy and verify branches with the package updates and then automatically merges in certain scenarios. Several GitHub actions run in tandem with Netlify to organize and approve the Dependabot pull requests. Especially for security updates, this enables live, interaction-less, verified updates. This does introduce a risk of faulty updates, but I believe there is a net benefit to updating automatically and Netlify can be leveraged to revert to a previous deployment.
+
 ### Addendum: Details
 
 I'm a bit of a perfectionist, and there's a lot of work I've done on this site that doesn't condense down to a list of features. Some of the smaller highlights that didn't make the cut:
