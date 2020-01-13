@@ -30,7 +30,7 @@
         "gatsby-remark-responsive-iframe": "^2.2.30",
         "gatsby-remark-table-of-contents": "0.0.8",
         "gatsby-source-filesystem": "^2.1.39",
-        "gatsby-transformer-json": "^2.2.22",
+        "gatsby-transformer-json": "^2.2.25",
         "gatsby-transformer-remark": "^2.6.39",
         "gatsby-transformer-sharp": "^2.3.6",
         "lodash": "^4.17.15",
