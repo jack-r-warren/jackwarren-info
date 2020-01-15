@@ -31,7 +31,7 @@ The site is fully copyrighted by Jack Warren; more information is available in t
 For a local development environment, create a `.env` file at the root of the project containing the following:
 
 ```
-SITE_URL=http://localhost:8000
+URL=http://localhost:8000
 CONTEXT=development
 ```
 
