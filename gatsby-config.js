@@ -115,9 +115,6 @@ module.exports = {
                 theme_color: `#263238`,
                 display: `minimal-ui`,
                 icon: `src/images/favicon.svg`,
-                icon_options: {
-                    purpose: `maskable`,
-                },
             },
         },
         {
