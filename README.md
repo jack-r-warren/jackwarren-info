@@ -9,11 +9,16 @@
 
 This is the codebase behind my personal website.
 
-The site is built with React, using Gatsby for static generation, Sass for styling, and Remark for Markdown processing.
+-   Built with [React](https://reactjs.org/)
+-   Generated with [Gatsby](https://www.gatsbyjs.org/)
+-   Styled with [Sass](https://sass-lang.com/)
+-   Processed with [Remark](https://remark.js.org/)
+-   Formatted with [Prettier](https://prettier.io/)
+-   Updated by [Dependabot](https://dependabot.com/)
+-   Deployed to [Netlify](https://www.netlify.com/)
+-   Proxied by [Cloudflare](https://www.cloudflare.com)
 
-The site is deployed to Netlify and proxied by Cloudflare.
-
-The site is fully copyrighted by Jack Warren; more information is available in the LICENSE file.
+This site is fully copyrighted by Jack Warren; more information is available in the [LICENSE file](https://github.com/jack-r-warren/jackwarren-info/blob/master/LICENSE).
 
 ## Configuration
 
