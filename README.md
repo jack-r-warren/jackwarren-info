@@ -1,7 +1,11 @@
 # [jackwarren.info](https://jackwarren.info)
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/d5c1c4a8-c3aa-4940-8cb9-c8511672e545/deploy-status)](https://app.netlify.com/sites/jackwarren-info/deploys)
-[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
+[![netlify status](https://api.netlify.com/api/v1/badges/d5c1c4a8-c3aa-4940-8cb9-c8511672e545/deploy-status)](https://app.netlify.com/sites/jackwarren-info/deploys)
+
+[![Language grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/g/jack-r-warren/jackwarren-info.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/jack-r-warren/jackwarren-info/context:javascript)
+[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?)](https://github.com/prettier/prettier)
+[![Dependabot Status](https://api.dependabot.com/badges/status?host=github&repo=jack-r-warren/jackwarren-info)](https://dependabot.com)
+[![Dependency status](https://badgen.net/david/dep/jack-r-warren/jackwarren-info)](https://github.com/jack-r-warren/jackwarren-info/network/dependencies)
 
 This is the codebase behind my personal website.
 
