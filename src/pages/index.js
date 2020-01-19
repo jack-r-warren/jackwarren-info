@@ -37,6 +37,7 @@ const IndexPage = ({ data }) => (
 export const query = graphql`
     query {
         allMarkdownRemark(
+            filter: { fields: { categories: { in: ["/posts"] } } }
             sort: { fields: [fields___date], order: DESC }
             limit: 5
         ) {
