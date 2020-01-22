@@ -4,6 +4,7 @@ date: 2018-12-01
 tags:
     - C/C++
     - Simulink
+    - Matlab
 ---
 
 The two projects of Northeastern's Embedded Design: Enabling Robotics course focus on manipulating a robotic arm connected to a Zedboard (a simple Linux computer with a field-programmable gate array). In both projects, my group applied knowledge from other classes to approach the tasks in an alternate manner from what was intended.
