@@ -197,7 +197,7 @@ exports.createPages = async ({ graphql, actions }) => {
     _.forIn(
         {
             // new : (old | [old])
-            "/projects/": "/posts/projects/",
+            "/posts/projects/": "/projects/",
 
             // projects
             "/posts/projects/racket-piazza/": "/blog/racket-piazza/",
