@@ -34,6 +34,8 @@ This website is built with [Gatsby](https://www.gatsbyjs.org/), a [React](https:
 
 In the case of my website, I use Gatsby's site generation to transform and package content so that visitors get the benefit of quick, static pages while I get the benefit of a developer- and writer-friendly environment.
 
+The entire website's codebase is available [right here on GitHub](https://github.com/jack-r-warren/jackwarren-info).
+
 ## Features
 
 ### Light and Dark Mode
