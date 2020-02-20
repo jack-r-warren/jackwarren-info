@@ -121,6 +121,8 @@ Rather than using `string-append`, I used two `~a` display markers and gave `pri
 
 ## The Final (Example) Product
 
+This example is what I'll use for demonstration purposes in the following sections.
+
 ```scheme
 #! usr/bin/env racket
 #lang racket
@@ -157,43 +159,6 @@ Rather than using `string-append`, I used two `~a` display markers and gave `pri
 With this framework, you can now begin adding in your own functions or definitions. Remember that the `printf` command is what will get triggered when your program is run, so have your functions be called from there. Lastly, note that you may have to rearrange some of your functions and definitions: that is perfectly alright, the `printf` and `parser` will work regardless of where they are in your program as long as they're below the parameter definitions.
 
 To test your program, the best way is to change the default values given to your parameters and hit run in DrRacket. There isn't a way to actually call your function from the command line in DrRacket, so the parser will never be activated and your program will just use its default values.
-
-## Another Example
-
-Below is an example of a greeting program. I use this example in the next section.
-
-```scheme
-#! usr/bin/env racket
-#lang racket
-
-;; parameter My-Name is one of:
-;; - #false
-;; - String
-(define my-name (make-parameter #false))
-
-;; command line parser
-(define parser
-  (command-line
-   #:usage-help
-   "Have the computer greet you!"
-
-   #:once-each
-   [("-n" "--name") NAME
-                    "Set your name"
-                    (my-name NAME)]
-
-   #:args () (void)))
-
-;; get-greeting : My-Name -> String
-;; Gets the greeting for the given My-Name
-(define (get-greeting mn)
-  (cond
-    [(boolean? mn) "Hello, unknown person!"]
-    [(string? mn) (string-append "Hello, " mn "!")]))
-
-;; prints result to the command line
-(printf "~a\n" (get-greeting (my-name)))
-```
 
 ## Running Your Program
 
