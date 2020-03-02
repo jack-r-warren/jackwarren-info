@@ -153,6 +153,8 @@ export default function DarkModeSwitch() {
         }
     }, [])
 
+    // Upon each switch change, set up an observer for other switches mutating
+    // the HTML attribute
     useEffect(() => {
         const observer = new MutationObserver(() => {
             if (document.documentElement.getAttribute(ATTR) != null)
