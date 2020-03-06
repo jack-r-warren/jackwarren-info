@@ -29,7 +29,7 @@
         "gatsby-remark-prismjs": "^3.3.33",
         "gatsby-remark-responsive-iframe": "^2.2.32",
         "gatsby-remark-table-of-contents": "0.0.9",
-        "gatsby-source-filesystem": "^2.1.48",
+        "gatsby-source-filesystem": "^2.1.49",
         "gatsby-transformer-json": "^2.2.26",
         "gatsby-transformer-remark": "^2.6.53",
         "gatsby-transformer-sharp": "^2.3.16",
