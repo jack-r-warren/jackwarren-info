@@ -89,6 +89,7 @@ exports.createPages = async ({ graphql, actions }) => {
             isPermanent: true,
             redirectInBrowser: true,
             toPath: baseSlug,
+            force: true,
         })
 
     const result = await graphql(`
@@ -236,6 +237,7 @@ exports.createPages = async ({ graphql, actions }) => {
                         fromPath: oldPath,
                         isPermanent: true,
                         toPath: newPath,
+                        force: true,
                     })
                 }
             )
