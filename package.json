@@ -37,7 +37,7 @@
         "node-sass": "^4.13.1",
         "prismjs": "^1.19.0",
         "prop-types": "^15.7.2",
-        "react": "^16.13.0",
+        "react": "^16.13.1",
         "react-dom": "^16.13.0",
         "react-helmet": "^6.0.0-beta.2",
         "rehype-react": "^5.0.0",
