@@ -45,7 +45,7 @@
         "typeface-open-sans": "0.0.75"
     },
     "devDependencies": {
-        "husky": "^4.2.4",
+        "husky": "^4.2.5",
         "prettier": "^1.19.1",
         "pretty-quick": "^2.0.1",
         "stylelint": "^13.3.1",
