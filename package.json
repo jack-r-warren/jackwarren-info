@@ -51,7 +51,7 @@
         "stylelint": "^13.3.2",
         "stylelint-config-recommended-scss": "^4.2.0",
         "stylelint-config-standard": "^20.0.0",
-        "stylelint-scss": "^3.16.1"
+        "stylelint-scss": "^3.17.0"
     },
     "scripts": {
         "build": "gatsby build",
