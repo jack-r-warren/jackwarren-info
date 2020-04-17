@@ -24,7 +24,7 @@
         "gatsby-plugin-sharp": "^2.5.5",
         "gatsby-plugin-sitemap": "^2.3.4",
         "gatsby-remark-autolink-headers": "^2.2.2",
-        "gatsby-remark-copy-linked-files": "^2.2.2",
+        "gatsby-remark-copy-linked-files": "^2.2.3",
         "gatsby-remark-images": "^3.2.3",
         "gatsby-remark-prismjs": "^3.4.2",
         "gatsby-remark-responsive-iframe": "^2.3.2",
