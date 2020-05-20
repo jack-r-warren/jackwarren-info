@@ -14,7 +14,7 @@
         "gatsby-plugin-catch-links": "^2.3.1",
         "gatsby-plugin-feed": "^2.5.2",
         "gatsby-plugin-manifest": "^2.4.8",
-        "gatsby-plugin-netlify": "^2.3.2",
+        "gatsby-plugin-netlify": "^2.3.3",
         "gatsby-plugin-netlify-cache": "^1.2.0",
         "gatsby-plugin-node-fields": "^3.1.0",
         "gatsby-plugin-offline": "^3.2.6",
