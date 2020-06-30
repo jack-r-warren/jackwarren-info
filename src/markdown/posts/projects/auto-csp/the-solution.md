@@ -70,6 +70,6 @@ The final piece of the puzzle is an automatic browser. While something that Grad
 
 There are costs that come with using a full browser though, as will be discussed in the next post. The rest of this component consists of just a breadth-first search through pages with the only wrinkle being a usage of [Coroutine Actors](https://kotlinlang.org/docs/reference/coroutines/shared-mutable-state-and-concurrency.html#actors) to allow the proxy coroutine to communicate with the automated browser one without breaking concurrency and being a bottleneck.
 
-The code for this project is available on [Github](https://github.com/jack-r-warren/auto-csp).
+The code for this project is available on [GitHub](https://github.com/jack-r-warren/auto-csp).
 
 Continue on to the next post in this series, [Trials and Tribulations](/posts/projects/auto-csp/trials-and-tribulations).
