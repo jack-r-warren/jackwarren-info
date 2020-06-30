@@ -9,15 +9,16 @@ import TagList from "../components/tag-list/tag-list"
 import PaginatedNavigation from "../components/layout/paginated-navigation/paginated-navigation"
 
 import categoryPostsStyles from "./category-posts.module.scss"
+import { slugToProperCase } from "../util/post-util"
 
 export default ({ data, pageContext }) => {
     const parents = [
         ...(pageContext.parentCategories.length !== 0
             ? [
                   pageContext.parentCategories
-                      .map(cat => (
+                      .map((cat) => (
                           <Link key={cat} to={cat}>
-                              {_.startCase(cat.split("/").pop())}
+                              {slugToProperCase(cat)}
                           </Link>
                       ))
                       .reduce((prev, current) => [prev, " / ", current]),
@@ -31,9 +32,9 @@ export default ({ data, pageContext }) => {
             ? [
                   "Subcategories: ",
                   pageContext.childCategories
-                      .map(cat => (
+                      .map((cat) => (
                           <Link key={cat} to={cat}>
-                              {_.startCase(cat.split("/").pop())}
+                              {slugToProperCase(cat)}
                           </Link>
                       ))
                       .reduce((prev, curr) => [prev, ", ", curr]),
@@ -43,7 +44,7 @@ export default ({ data, pageContext }) => {
 
     const featureExist = data.featuredPosts.nodes.length > 0
     const shouldFeature = featureExist && pageContext.selfPage <= 1
-    const categoryName = _.startCase(pageContext.selfCategory.split("/").pop())
+    const categoryName = slugToProperCase(pageContext.selfCategory)
     const featuredComponents = (
         <>
             <h3>{`Featured ${categoryName}`}</h3>
@@ -92,7 +93,7 @@ export default ({ data, pageContext }) => {
                     <TagList
                         countMap={_.countBy(
                             data.taggedPosts.nodes.flatMap(
-                                node => node.fields.tags
+                                (node) => node.fields.tags
                             )
                         )}
                         className={categoryPostsStyles.right}
