@@ -4,6 +4,10 @@
         "description": "Almost everything I've written on my site, all in one place. The subcategories above might help if you're looking for something specific, or you can look at <a href=\"/tags\">all tags</a>."
     },
     {
+        "category": "/posts/projects/auto-csp",
+        "description": "An experiment in programmatically inferring a Content Security Policy, <a href=\"https://github.com/jack-r-warren/auto-csp\">available on GitHub</a>."
+    },
+    {
         "category": "/posts/guides/racket",
         "description": "These guides are a product of my enthusiasm for Northeastern University's <a href=\"https://course.ccs.neu.edu/cs2500/index.html\">Fundamentals of Computer Science 1</a> course, which I've been staff for ever since taking it. That course uses <a href=\"https://www.racket-lang.org/\">Racket</a> as the language of choice, and here I've documented some of what I've learned experimenting with it in later courses."
     },
