@@ -21,26 +21,6 @@ At the same time, though, I'm not sure that it is a "good" outcome for this proj
 
 The solution here doesn't have to be one-size fits all. Creating a standard like CSP and unleashing it upon web developers doesn't promote its use as much as simply abstracting over it at the framework level would. I have almost zero use for my website working offline, but when adding that feature to every page was as simple as adding a line to my `package.json`, I shrugged my shoulders and went for it. I don't think that CSP is a doomed standard, I just think we as a cybersecurity community need to help make it easier for folks to use.
 
-```kotlin
-sealed class UrlMsg
-class SendUrls(val urls: Sequence<String>) : UrlMsg()
-class GetUrl(val url: CompletableDeferred<String?>) : UrlMsg()
-
-fun CoroutineScope.urlActor(initialQueue: Collection<String> = listOf()) = actor<UrlMsg> {
-    val alreadyReceived: MutableSet<String> = initialQueue.toMutableSet()
-    val queue = ArrayDeque(initialQueue)
-    for (msg in channel) when (msg) {
-        is SendUrls -> msg.urls.forEach {
-            if (it !in alreadyReceived) {
-                alreadyReceived.add(it)
-                queue.addLast(it)
-            }
-        }
-        is GetUrl -> msg.url.complete(queue.removeFirstOrNull())
-    }
-}
-```
-
 ### Thanks
 
 Many thanks to anyone who makes it through reading this series--I'd be more than happy to talk more about it, so just [let me know](/contact) if you have any questions or comments.
