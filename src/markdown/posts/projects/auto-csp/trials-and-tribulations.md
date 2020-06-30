@@ -91,7 +91,7 @@ For Chrome, at least, I found out that the `--disable-local-storage` flag actual
 
 ### Chrome incognito mode happily uses service workers
 
-Logic would have it that I could address the above case by using a browser's incognito mode. It turns out that Chrome will happily make use of existing PWA service workers in incognito mode, and I haven't been able to figure out a way to disable that.
+Logic would have it that I could address the above case by using a browser's incognito mode. It turns out that Chrome will happily make use of existing PWA service workers in incognito mode, and I haven't been able to figure out a way to disable that. This appears to very specifically be a "feature" of how Selenium makes use of Chrome, since I can't replicate this manually. It did throw off my testing for a good while, however.
 
 ### Loading after loaded
 
