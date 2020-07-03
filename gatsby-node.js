@@ -8,52 +8,57 @@ const DEFAULT_FEATURED_IMAGE = "images/default.jpg"
 // Description for fields to be created by gatsby-plugin-node-fields
 const descriptors = [
     {
-        predicate: node => node.internal.type === "MarkdownRemark",
+        predicate: (node) => node.internal.type === "MarkdownRemark",
         fields: [
             {
                 name: "slug",
                 getter: (node, context, actions, getNode) =>
                     createFilePath({ node, getNode }),
-                validator: value => value != null,
+                validator: (value) => value != null,
             },
             {
                 name: "title",
-                getter: node => node.frontmatter.title,
-                validator: value => value != null,
+                getter: (node) => node.frontmatter.title,
+                validator: (value) => value != null,
             },
             {
                 name: "date",
-                getter: node => node.frontmatter.date,
+                getter: (node) => node.frontmatter.date,
                 defaultValue: null,
             },
             {
                 name: "tags",
-                getter: node => node.frontmatter.tags,
+                getter: (node) => node.frontmatter.tags,
                 defaultValue: [],
             },
             {
                 name: "featured",
-                getter: node => node.frontmatter.featured,
+                getter: (node) => node.frontmatter.featured,
                 defaultValue: false,
             },
             {
                 name: "featuredImage",
-                getter: node => node.frontmatter.featuredImage,
+                getter: (node) => node.frontmatter.featuredImage,
                 defaultValue: (node, context, actions, getNode) =>
                     [
                         ...createFilePath({ node, getNode })
                             .split("/")
-                            .filter(s => s !== "")
+                            .filter((s) => s !== "")
                             .map(() => ".."),
                         DEFAULT_FEATURED_IMAGE,
                     ].join("/"),
+            },
+            {
+                name: "featuredPriority",
+                getter: (node) => node.frontmatter.featuredPriority,
+                defaultValue: 0,
             },
             {
                 name: "categories",
                 getter: (node, context, actions, getNode) =>
                     createFilePath({ node, getNode })
                         .split("/")
-                        .filter(s => s !== "")
+                        .filter((s) => s !== "")
                         .slice(0, -1)
                         .reduce(
                             (soFar, current) => [
@@ -83,7 +88,7 @@ exports.createPages = async ({ graphql, actions }) => {
         force: true,
     })
 
-    const createFirstPageRedirect = baseSlug =>
+    const createFirstPageRedirect = (baseSlug) =>
         createRedirect({
             fromPath: `${baseSlug}/1`,
             isPermanent: true,
@@ -125,7 +130,7 @@ exports.createPages = async ({ graphql, actions }) => {
                 context: {
                     selfCategory: categorySlug,
                     childCategories: categorySet.filter(
-                        s =>
+                        (s) =>
                             s.startsWith(categorySlug) &&
                             // We only want shallow subcategories
                             s.split("/").length ===
@@ -133,7 +138,7 @@ exports.createPages = async ({ graphql, actions }) => {
                     ),
                     parentCategories: categorySet
                         .filter(
-                            s =>
+                            (s) =>
                                 categorySlug.startsWith(s) && categorySlug !== s
                         )
                         .sort((a, b) => a.length - b.length),
@@ -232,7 +237,7 @@ exports.createPages = async ({ graphql, actions }) => {
         (oldPaths, newPath) =>
             _.forEach(
                 Array.isArray(oldPaths) ? oldPaths : [oldPaths],
-                oldPath => {
+                (oldPath) => {
                     createRedirect({
                         fromPath: oldPath,
                         isPermanent: true,

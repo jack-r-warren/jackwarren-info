@@ -8,6 +8,7 @@ tags:
     - Gatsby
 featured: true
 featuredImage: jackwarren-info.png
+featuredPriority: 10
 ---
 
 This site itself is one of the projects of which I'm proudest. It is entirely self-designed with a fast, modern stack behind it.

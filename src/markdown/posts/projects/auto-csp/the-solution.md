@@ -7,6 +7,7 @@ tags:
     - CSP
 featured: true
 featuredImage: code-graphic.png
+featuredPriority: 10
 ---
 
 This post is continued from the previous one in this series, [The Problem](/posts/projects/auto-csp/the-problem).
