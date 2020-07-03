@@ -100,13 +100,11 @@ exports.createPages = async ({ graphql, actions }) => {
     const result = await graphql(`
         query {
             allMarkdownRemark {
-                edges {
-                    node {
-                        fields {
-                            slug
-                            categories
-                            tags
-                        }
+                nodes {
+                    fields {
+                        slug
+                        categories
+                        tags
                     }
                 }
             }
@@ -115,9 +113,9 @@ exports.createPages = async ({ graphql, actions }) => {
 
     // Category pages
     const POSTS_PER_CATEGORY_PAGE = 10
-    const categoryList = result.data.allMarkdownRemark.edges.flatMap(
-        ({ node }) => node.fields.categories
-    )
+    const categoryList = result.data.allMarkdownRemark.nodes
+        .map((node) => node.fields.categories)
+        .flat(1)
     const categoriesByCount = _.countBy(categoryList)
     const categorySet = [...new Set(categoryList)]
     _.forIn(categoriesByCount, (postsInCategory, categorySlug) => {
@@ -159,9 +157,9 @@ exports.createPages = async ({ graphql, actions }) => {
 
     // Tag pages
     const POSTS_PER_TAG_PAGE = 10
-    const tagList = result.data.allMarkdownRemark.edges.flatMap(
-        ({ node }) => node.fields.tags
-    )
+    const tagList = result.data.allMarkdownRemark.nodes
+        .map((node) => node.fields.tags)
+        .flat(1)
     const tagsByCount = _.countBy(tagList)
     _.forIn(tagsByCount, (postsWithTag, tag) => {
         const pagesNeeded = Math.ceil(postsWithTag / POSTS_PER_TAG_PAGE)
@@ -189,7 +187,7 @@ exports.createPages = async ({ graphql, actions }) => {
     })
 
     // Post pages
-    result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+    result.data.allMarkdownRemark.nodes.forEach((node) => {
         createPage({
             path: node.fields.slug,
             component: path.resolve(`./src/templates/post.js`),
