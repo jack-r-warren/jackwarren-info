@@ -37,7 +37,7 @@ In other words, I think there's a significant disconnect between the people crea
 
 ### CDNs make CSP look ridiculous
 
-I use Netlify and CloudFlare for hosting and proxying on my website. This, in turn, means that there's servers that I don't control who will be contacted in the course of my website loading. If I run Auto CSP on my own website, the output is littered with referenced to a random subdomain of Amazon's Cloudfront CDN, which could change at any time.
+I use Netlify and CloudFlare for hosting and proxying on my website. This, in turn, means that there's servers that I don't control who will be contacted in the course of my website loading. If I run Auto CSP on my own website, the output is littered with references to a random subdomain of Amazon's Cloudfront CDN, which could change at any time.
 
 ```text
 ... font-src https://d33wubrfki0l68.cloudfront.net; img-src 'self' data: https://d33wubrfki0l68.cloudfront.net https://api.netlify.com; ...
@@ -49,7 +49,7 @@ I intended to go to Amazon's own website to show that they had to resort to wild
 
 For some reason I can't fathom, [report-uri](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/report-uri) is deprecated before [report-to](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/report-to) has been implemented in anything other than Chromium ([and Google's docs say you need a flag to enable it in Chrome](https://developers.google.com/web/updates/2018/09/reportingapi#header)). I have the luxury of being a college student with lots of time to kill during the COVID-19 pandemic, but if I had asked any of the folks I have built websites for if I could add some deprecated or unsupported features to their site, the answer would've been a firm no.
 
-I'm not at all saying that the existing API can't be improved upon--in fact, I had planned to make Auto CSP work with Feature Policy too until I realized it had no reporting mechanism at all--but deprecating the only working thing is hostile to developers and makes it harder for an honest business justification.
+I'm not at all saying that the existing API can't be improved upon--in fact, I had planned to make Auto CSP work with Feature Policy too until I realized that system had no reporting mechanism at all--but deprecating the only working thing is hostile to developers and makes it harder for an honest business justification.
 
 ### APIs that only get 90% of the way there
 
