@@ -46,7 +46,7 @@
     },
     "devDependencies": {
         "husky": "^4.2.5",
-        "prettier": "^2.1.0",
+        "prettier": "^2.1.1",
         "pretty-quick": "^2.0.2",
         "stylelint": "^13.6.1",
         "stylelint-config-recommended-scss": "^4.2.0",
