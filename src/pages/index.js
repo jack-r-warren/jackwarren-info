@@ -16,7 +16,7 @@ const IndexPage = ({ data }) => (
                 <ProfileImage />
             </div>
             <div className={indexStyles.leader}>
-                <h1>Hi, I'm Jack Warren</h1>
+                <h1>Hi, I’m Jack Warren</h1>
                 <h3>
                     I’m an undergrad studying cybersecurity at Northeastern
                     University
