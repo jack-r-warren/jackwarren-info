@@ -42,7 +42,7 @@
         "react-helmet": "^6.1.0",
         "rehype-react": "^6.1.0",
         "typeface-fira-code": "^1.1.13",
-        "typeface-open-sans": "0.0.75"
+        "typeface-open-sans": "1.1.13"
     },
     "devDependencies": {
         "husky": "^4.3.0",
