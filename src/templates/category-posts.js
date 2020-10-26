@@ -58,7 +58,7 @@ export default ({ data, pageContext }) => {
 
     return (
         <Layout>
-            <Metadata title={`All ${categoryName}`} description={description} />
+            <Metadata title={categoryName} description={description} />
             <div>
                 {parents.length > 0 && <h4>{parents}</h4>}
                 <h1>{categoryName}</h1>
