@@ -31,7 +31,7 @@
         "gatsby-remark-table-of-contents": "0.0.9",
         "gatsby-source-filesystem": "^2.4.0",
         "gatsby-transformer-json": "^2.4.15",
-        "gatsby-transformer-remark": "^2.9.0",
+        "gatsby-transformer-remark": "^2.9.2",
         "gatsby-transformer-sharp": "^2.5.21",
         "lodash": "^4.17.20",
         "node-sass": "^4.14.1",
