@@ -9,7 +9,7 @@
         "@reach/router": "^1.3.4",
         "clipboard-copy": "^3.2.0",
         "dotenv": "^8.2.0",
-        "gatsby": "^2.27.2",
+        "gatsby": "^2.27.3",
         "gatsby-image": "^2.6.0",
         "gatsby-plugin-catch-links": "^2.5.0",
         "gatsby-plugin-feed": "^2.8.0",
