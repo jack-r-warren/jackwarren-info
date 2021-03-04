@@ -1,6 +1,6 @@
 [build]
     publish = "public/"
-    command = "npm install -g gatsby && gatsby build"
+    command = "npm install -g gatsby gatsby-cli gatsby-core-utils && gatsby build"
 [build.processing]
   skip_processing = false
 [build.processing.css]
