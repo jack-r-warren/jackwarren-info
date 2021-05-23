@@ -60,8 +60,6 @@ Install the Gatsby CLI if you don't have it already:
 npm install -g gatsby-cli
 ```
 
-### Command line
-
 Clone down this repository:
 
 ```shell script
@@ -85,22 +83,6 @@ To make a production build:
 ```shell script
 npm run build
 ```
-
-### WebStorm
-
-Create a new project from version control with this URL:
-
-```
-git@github.com:jack-r-warren/jackwarren-info.git
-```
-
-WebStorm will autodetect the npm scripts available in the project for tasks like building and formatting.
-
-Several run configurations have been defined for common actions:
-
--   `develop`: Run the development server
--   `develop host`: Run the development server so it is available on your local network (assuming your firewall allows access to port 8000)
--   `format`: Apply code formatting style to the project
 
 ## Tooling
 
