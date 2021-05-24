@@ -10,7 +10,7 @@ module.exports = {
     siteMetadata: {
         siteUrl: siteUrl,
         title: `Jack Warren`,
-        description: `Blog posts, tutorials, and projects from a cybersecurity undergrad at Northeastern University`,
+        description: `I'm a DevOps Software Engineer at the Broad Institute of MIT and Harvard`,
         author: `Jack Warren`,
         authorTwitter: `_jwarren`,
         authorLinkedIn: `jack-r-warren`,
