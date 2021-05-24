@@ -87,7 +87,7 @@ export default function DarkModeSwitch() {
             passiveSupported = false
         }
 
-        const darkMediaListener = event => {
+        const darkMediaListener = (event) => {
             if (event.matches) {
                 if (localStorage.getItem(OS_THEME) !== "dark")
                     localStorage.setItem(OS_THEME, "dark")
@@ -100,7 +100,7 @@ export default function DarkModeSwitch() {
                 }
             }
         }
-        const lightMediaListener = event => {
+        const lightMediaListener = (event) => {
             if (event.matches) {
                 if (localStorage.getItem(OS_THEME) !== "light")
                     localStorage.setItem(OS_THEME, "light")
@@ -179,7 +179,7 @@ export default function DarkModeSwitch() {
                     type="checkbox"
                     id={id}
                     checked={switchShowsDark}
-                    onChange={event => {
+                    onChange={(event) => {
                         const switchShowing = event.target.checked
                             ? "dark"
                             : "light"

@@ -47,7 +47,6 @@ The resulting file is in markdown format with headers made for a basic case brie
 | Issue | Holding |
 | :---: | :-----: |
 
-
 |
 
 ### Reasoning

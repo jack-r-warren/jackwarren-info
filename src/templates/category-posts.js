@@ -105,7 +105,7 @@ export default ({ data, pageContext }) => {
 }
 
 export const query = graphql`
-    query($selfCategory: String!, $postLimit: Int!, $postSkip: Int!) {
+    query ($selfCategory: String!, $postLimit: Int!, $postSkip: Int!) {
         allPosts: allMarkdownRemark(
             filter: { fields: { categories: { in: [$selfCategory] } } }
             sort: { fields: [fields___date], order: DESC }

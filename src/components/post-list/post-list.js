@@ -8,7 +8,7 @@ import { categoryString } from "../../util/post-util"
 const PostList = ({ postNodes, showCategories }) => {
     return (
         <div>
-            {postNodes.map(node => (
+            {postNodes.map((node) => (
                 <div key={node.fields.slug}>
                     {showCategories && (
                         <h4 className={postListStyles.postInfo}>

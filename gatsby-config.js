@@ -42,7 +42,7 @@ module.exports = {
                         resolve: `gatsby-remark-copy-linked-files`,
                         options: {
                             ignoreFileExtensions: [`png`, `jpg`, `jpeg`],
-                            destinationDir: f =>
+                            destinationDir: (f) =>
                                 `downloads/${f.hash}/${f.name}`,
                         },
                     },
@@ -168,7 +168,7 @@ module.exports = {
                 feeds: [
                     {
                         serialize: ({ query: { site, allMarkdownRemark } }) => {
-                            return allMarkdownRemark.edges.map(edge => {
+                            return allMarkdownRemark.edges.map((edge) => {
                                 return Object.assign({}, edge.node.fields, {
                                     description: edge.node.excerpt,
                                     url:
@@ -179,8 +179,8 @@ module.exports = {
                                         edge.node.fields.slug,
                                     // RSS categories are just a list of strings
                                     categories: edge.node.fields.categories
-                                        .map(cat => cat.split("/").pop())
-                                        .filter(cat => cat !== ""),
+                                        .map((cat) => cat.split("/").pop())
+                                        .filter((cat) => cat !== ""),
                                 })
                             })
                         },

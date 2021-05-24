@@ -20,7 +20,7 @@ const AllTagsPage = ({ data }) => (
         </p>
         <TagList
             countMap={_.countBy(
-                data.allMarkdownRemark.nodes.flatMap(node => node.fields.tags)
+                data.allMarkdownRemark.nodes.flatMap((node) => node.fields.tags)
             )}
             showTitle={false}
         />

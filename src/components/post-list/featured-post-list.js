@@ -8,7 +8,7 @@ import featuredPostListStyles from "./featured-post-list.module.scss"
 const FeaturedPostList = ({ postNodes }) => {
     return postNodes.length > 0 ? (
         <div className={featuredPostListStyles.featurePostsContainer}>
-            {postNodes.map(node => (
+            {postNodes.map((node) => (
                 <div
                     className={featuredPostListStyles.postItem}
                     key={node.fields.title}

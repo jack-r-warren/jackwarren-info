@@ -33,7 +33,7 @@ export default ({ data, pageContext }) => {
 }
 
 export const query = graphql`
-    query($selfTag: String!, $postLimit: Int!, $postSkip: Int!) {
+    query ($selfTag: String!, $postLimit: Int!, $postSkip: Int!) {
         allMarkdownRemark(
             filter: { fields: { tags: { in: [$selfTag] } } }
             sort: { fields: [fields___date], order: DESC }
