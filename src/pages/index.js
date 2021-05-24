@@ -18,8 +18,10 @@ const IndexPage = ({ data }) => (
             <div className={indexStyles.leader}>
                 <h1>Hi, I’m Jack Warren</h1>
                 <h3>
-                    I’m an undergrad studying cybersecurity at Northeastern
-                    University
+                    DevOps Software Engineer <br />@{" "}
+                    <a href="https://www.broadinstitute.org/">
+                        Broad Institute of MIT and Harvard
+                    </a>
                 </h3>
                 <h3>
                     <Link to={"/contact"}>Contact →</Link>
