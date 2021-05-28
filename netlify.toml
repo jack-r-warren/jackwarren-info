@@ -1,20 +1,21 @@
 [build]
-    publish = "public/"
-    command = "gatsby build"
+publish = "public/"
+command = "gatsby build"
 [build.processing]
-  skip_processing = false
+skip_processing = false
 [build.processing.css]
 # Webpack already does bundling, we don't want to be overzealous
-  bundle = false
-  minify = true
+bundle = false
+minify = true
 [build.processing.js]
 # Webpack already does bundling, we don't want to be overzealous
-  bundle = false
-  minify = true
+bundle = false
+minify = true
 [build.processing.html]
-  pretty_urls = true
+pretty_urls = true
 [build.processing.images]
-  compress = true
+compress = true
 
-[[plugins]]
-  package = "netlify-plugin-gatsby-cache"
+# https://github.com/mdreizin/gatsby-plugin-robots-txt/issues/457#issuecomment-850499932
+# [[plugins]]
+# package = "netlify-plugin-gatsby-cache"
