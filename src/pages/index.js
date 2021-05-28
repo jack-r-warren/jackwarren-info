@@ -3,7 +3,6 @@ import { graphql, Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 
 import Layout from "../components/layout/layout"
-import ProfileImage from "../components/images/profile-image"
 import Metadata from "../components/layout/metadata"
 import PostList from "../components/post-list/post-list"
 
