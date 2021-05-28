@@ -82,7 +82,7 @@ exports.createPages = async ({ graphql, actions }) => {
     const { createPage, createRedirect } = actions
 
     createRedirect({
-        fromPath: "https://jackwarren-info.netlify.com/*",
+        fromPath: "https://jackwarren-info.netlify.app/*",
         toPath: "https://jackwarren.info/:splat",
         isPermanent: true,
         force: true,
