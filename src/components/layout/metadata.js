@@ -3,7 +3,6 @@ import PropTypes from "prop-types"
 import { Helmet } from "react-helmet"
 import { graphql, useStaticQuery } from "gatsby"
 import defaultImg from "../../images/default.jpg"
-import { globalHistory } from "@reach/router"
 
 function Metadata({ description, title }) {
     const { site, allFile } = useStaticQuery(
@@ -35,8 +34,6 @@ function Metadata({ description, title }) {
         `
     )
 
-    // Trick to get the current path outside of the DOM
-    const path = globalHistory.location.pathname
     const metaDescription = description || site.siteMetadata.description
 
     return (
@@ -48,10 +45,6 @@ function Metadata({ description, title }) {
             titleTemplate={`%s | ${site.siteMetadata.title}`}
         >
             <html lang="en" />
-            <link
-                rel="canonical"
-                href={`${site.siteMetadata.siteUrl}${path}`}
-            />
             <link
                 rel="icon"
                 // We get a url for this via graphql because we don't want to
@@ -70,10 +63,6 @@ function Metadata({ description, title }) {
             <title>{title}</title>
             <meta name="description" content={metaDescription} />
 
-            <meta
-                name="og:url"
-                content={`${site.siteMetadata.siteUrl}${path}`}
-            />
             <meta name="og:title" content={title} />
             <meta name="og:description" content={metaDescription} />
             <meta name="og:type" content="website" />

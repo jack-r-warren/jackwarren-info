@@ -20,11 +20,22 @@ module.exports = {
     },
     plugins: [
         `gatsby-plugin-react-helmet`,
-        `gatsby-plugin-sass`,
+        `gatsby-plugin-image`,
         `gatsby-plugin-sharp`,
         `gatsby-plugin-catch-links`,
         `gatsby-transformer-sharp`,
         `gatsby-transformer-json`,
+        {
+            resolve: `gatsby-plugin-sass`,
+            options: {
+                cssLoaderOptions: {
+                    esModule: false,
+                    modules: {
+                        namedExport: false,
+                    },
+                },
+            },
+        },
         {
             resolve: `gatsby-transformer-remark`,
             options: {
@@ -224,7 +235,7 @@ module.exports = {
         {
             resolve: `gatsby-plugin-sitemap`,
             options: {
-                exclude: [`/contact/thanks`],
+                excludes: [`/contact/thanks`],
             },
         },
         `gatsby-plugin-offline`,

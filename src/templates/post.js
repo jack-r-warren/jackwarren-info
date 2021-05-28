@@ -13,7 +13,7 @@ import { categoryString, dateString, tagString } from "../util/post-util"
 
 import postStyles from "./post.module.scss"
 
-export default ({ data }) => {
+const Post = ({ data }) => {
     const post = data.markdownRemark
     const info = [
         ...(categoryString(post) || []),
@@ -54,6 +54,8 @@ export default ({ data }) => {
         </Layout>
     )
 }
+
+export default Post
 
 export const query = graphql`
     query ($slug: String!) {

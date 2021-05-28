@@ -1,5 +1,5 @@
 import React from "react"
-import Img from "gatsby-image"
+import { GatsbyImage } from "gatsby-plugin-image"
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 
@@ -14,11 +14,12 @@ const FeaturedPostList = ({ postNodes }) => {
                     key={node.fields.title}
                 >
                     <Link to={node.fields.slug}>
-                        <Img
-                            className={featuredPostListStyles.featuredImage}
-                            fluid={
-                                node.fields.featuredImage.childImageSharp.fluid
+                        <GatsbyImage
+                            image={
+                                node.fields.featuredImage.childImageSharp
+                                    .gatsbyImageData
                             }
+                            className={featuredPostListStyles.featuredImage}
                         />
                     </Link>
                     <h2 className={featuredPostListStyles.postTitle}>

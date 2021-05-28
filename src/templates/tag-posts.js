@@ -5,7 +5,7 @@ import Metadata from "../components/layout/metadata"
 import PostList from "../components/post-list/post-list"
 import PaginatedNavigation from "../components/layout/paginated-navigation/paginated-navigation"
 
-export default ({ data, pageContext }) => {
+const TagPosts = ({ data, pageContext }) => {
     const tag = pageContext.selfTag
     return (
         <Layout>
@@ -31,6 +31,8 @@ export default ({ data, pageContext }) => {
         </Layout>
     )
 }
+
+export default TagPosts
 
 export const query = graphql`
     query ($selfTag: String!, $postLimit: Int!, $postSkip: Int!) {

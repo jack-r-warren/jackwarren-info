@@ -1,5 +1,6 @@
 import React from "react"
 import { graphql, Link } from "gatsby"
+import { StaticImage } from "gatsby-plugin-image"
 
 import Layout from "../components/layout/layout"
 import ProfileImage from "../components/images/profile-image"
@@ -12,9 +13,15 @@ const IndexPage = ({ data }) => (
     <Layout>
         <Metadata title="Home" />
         <div className={indexStyles.container}>
-            <div className={indexStyles.profile}>
-                <ProfileImage />
-            </div>
+            <StaticImage
+                className={indexStyles.profile}
+                src="../images/profile.jpg"
+                alt="Profile headshot"
+                layout="constrained"
+                placeholder="blurred"
+                width={300}
+                quality={100}
+            />
             <div className={indexStyles.leader}>
                 <h1>Hi, I’m Jack Warren</h1>
                 <h3>

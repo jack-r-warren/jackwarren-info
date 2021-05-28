@@ -11,7 +11,7 @@ import PaginatedNavigation from "../components/layout/paginated-navigation/pagin
 import categoryPostsStyles from "./category-posts.module.scss"
 import { slugToProperCase } from "../util/post-util"
 
-export default ({ data, pageContext }) => {
+const CategoryPosts = ({ data, pageContext }) => {
     const parents = [
         ...(pageContext.parentCategories.length !== 0
             ? [
@@ -104,6 +104,8 @@ export default ({ data, pageContext }) => {
     )
 }
 
+export default CategoryPosts
+
 export const query = graphql`
     query ($selfCategory: String!, $postLimit: Int!, $postSkip: Int!) {
         allPosts: allMarkdownRemark(
@@ -151,9 +153,7 @@ export const query = graphql`
                     title
                     featuredImage {
                         childImageSharp {
-                            fluid(maxWidth: 800) {
-                                ...GatsbyImageSharpFluid
-                            }
+                            gatsbyImageData(width: 800, layout: CONSTRAINED)
                         }
                     }
                 }
