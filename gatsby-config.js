@@ -22,7 +22,6 @@ module.exports = {
         `gatsby-plugin-react-helmet`,
         `gatsby-plugin-sass`,
         `gatsby-plugin-sharp`,
-        `gatsby-plugin-netlify-cache`,
         `gatsby-plugin-catch-links`,
         `gatsby-transformer-sharp`,
         `gatsby-transformer-json`,
