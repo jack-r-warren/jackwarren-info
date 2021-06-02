@@ -18,7 +18,8 @@ const IndexPage = ({ data }) => (
                 alt="Profile headshot"
                 layout="constrained"
                 placeholder="blurred"
-                width={300}
+                // _variables.scss / $phone-maximum
+                width={480}
                 quality={100}
             />
             <div className={indexStyles.leader}>
