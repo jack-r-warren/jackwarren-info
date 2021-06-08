@@ -12,7 +12,7 @@
         "gatsby": "^3.6.2",
         "gatsby-plugin-catch-links": "^3.7.0",
         "gatsby-plugin-feed": "^3.7.0",
-        "gatsby-plugin-image": "^1.6.0",
+        "gatsby-plugin-image": "^1.7.0",
         "gatsby-plugin-manifest": "^3.7.0",
         "gatsby-plugin-netlify": "^3.6.1",
         "gatsby-plugin-node-fields": "^3.1.0",
