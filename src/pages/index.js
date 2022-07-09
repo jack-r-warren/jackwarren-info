@@ -25,7 +25,7 @@ const IndexPage = ({ data }) => (
             <div className={indexStyles.leader}>
                 <h1>Hi, I’m Jack Warren</h1>
                 <h3>
-                    DevOps Software Engineer <br />@{" "}
+                    Senior Software Engineer, DevOps <br />@{" "}
                     <a href="https://www.broadinstitute.org/">
                         Broad Institute of MIT and Harvard
                     </a>
