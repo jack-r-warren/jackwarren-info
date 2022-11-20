@@ -9,7 +9,6 @@ import contactStyles from "./contact.module.scss"
 
 const ContactPage = ({ data }) => {
     const {
-        authorTwitter,
         authorLinkedIn,
         authorKeybase,
         email,
@@ -37,12 +36,12 @@ const ContactPage = ({ data }) => {
                     </span>
                 </li>
                 <li>
-                    Message me on Twitter at{" "}
+                    Message me on Mastodon at{" "}
                     <a
                         className={contactStyles.nowrap}
-                        href={`https://twitter.com/${authorTwitter}`}
+                        href={`https://hachyderm.io/@jackwarren`}
                     >
-                        @{authorTwitter}
+                        @jackwarren@hachyderm.io
                     </a>
                 </li>
                 <li>
@@ -54,11 +53,6 @@ const ContactPage = ({ data }) => {
                 <li>
                     See my PGP public key on{" "}
                     <a href={`https://keybase.io/${authorKeybase}`}>Keybase</a>{" "}
-                </li>
-                <li>
-                    If there's a problem with the site and you're comfortable
-                    with GitHub, you can raise an issue at the{" "}
-                    <a href={`${siteRepository}/issues`}>tracker</a>
                 </li>
             </ul>
             <form
