@@ -23,7 +23,7 @@ const IndexPage = ({ data }) => (
                 quality={100}
             />
             <div className={indexStyles.leader}>
-                <h1>Hi, I’m <a rel="me" href="https://infosec.exchange/@jackwarren">Jack Warren</a></h1>
+                <h1>Hi, I’m <a rel="me" href="https://hachyderm.io/@jackwarren">Jack Warren</a></h1>
                 <h3>
                     Senior Software Engineer, DevOps <br />@{" "}
                     <a href="https://www.broadinstitute.org/">
