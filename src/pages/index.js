@@ -14,7 +14,7 @@ const IndexPage = ({ data }) => (
         <div className={indexStyles.container}>
             <StaticImage
                 className={indexStyles.profile}
-                src="../images/profile.jpg"
+                src="../images/profile.png"
                 alt="Profile headshot"
                 layout="constrained"
                 placeholder="blurred"
