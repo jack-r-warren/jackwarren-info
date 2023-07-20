@@ -38,7 +38,7 @@ Assuming you had `icon.ico` in your user's Pictures folder, you would add the be
 
 ### Admin
 
-To make make a task run with admin privileges, simply prefix the task's command with a `*`. Each of my tasks tend to have an "as Admin" copy that are identical except for the name and that asterisk.
+To make a task run with admin privileges, simply prefix the task's command with a `*`. Each of my tasks tend to have an "as Admin" copy that are identical except for the name and that asterisk.
 
 ## PowerShell
 
