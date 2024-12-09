@@ -1,0 +1,50 @@
+version: 2
+updates:
+- package-ecosystem: npm
+  directory: "/"
+  schedule:
+    interval: daily
+    time: "14:00"
+  open-pull-requests-limit: 99
+  ignore:
+  - dependency-name: stylelint-config-standard
+    versions:
+    - 21.0.0
+  - dependency-name: gatsby-plugin-sitemap
+    versions:
+    - 3.3.0
+  - dependency-name: gatsby
+    versions:
+    - 2.32.6
+    - 2.32.7
+    - 2.32.8
+    - 3.3.0
+  - dependency-name: gatsby-image
+    versions:
+    - 3.0.0
+    - 3.1.0
+    - 3.2.0
+    - 3.3.0
+  - dependency-name: gatsby-plugin-sharp
+    versions:
+    - 3.2.0
+  - dependency-name: gatsby-plugin-offline
+    versions:
+    - 4.2.0
+  - dependency-name: husky
+    versions:
+    - 5.0.9
+    - 5.1.0
+    - 5.1.1
+    - 5.1.2
+    - 5.1.3
+    - 5.2.0
+  - dependency-name: react
+    versions:
+    - 17.0.1
+- package-ecosystem: github-actions
+  directory: "/"
+  schedule:
+    interval: daily
+    time: "14:00"
+  open-pull-requests-limit: 99
